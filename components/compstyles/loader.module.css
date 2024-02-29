@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 5vw;
+    justify-content: center;
+    margin-top: 10vw;
+}
+
+.logo{
+    margin-bottom: 20px;
+}
+.top2 {
+    width: 100%;
+  text-align: center;
+  background-image: linear-gradient(to left, #ffffff40, #ffffff40);
+  background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: calc(1em / 16);
+  -webkit-background-clip: text;
+  font-family: Jost;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  display: flex;
+  }
+  
+  @media (width<800px){
+    .top2{
+        font-size: 2rem;
+    }
+}
+@media (width<600px){
+    .top2{
+        font-size: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 1.4rem;
+    }
+    
+}
+
+@media (width> 800px){
+    .forThree{
+        min-height: 113px;
+    }
+    .top2{
+        align-items: center;
+    }
+}

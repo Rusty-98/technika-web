@@ -1,0 +1,47 @@
+.globe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  width: 50vw;
+  /* border: 2px solid rgb(255, 255, 255); */
+  border-radius: 10px;
+  /* background-color: aqua; */
+  cursor: pointer;
+
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.top {
+  margin-top: 1rem;
+  background-image: linear-gradient(to right, rgba(73, 73, 73, 1), rgba(255, 255, 255, 1));
+  background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: calc(2em / 16);
+  -webkit-background-clip: text;
+  color: black;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: Krona One;
+  font-size: 5.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media screen and (max-width: 768px) {
+  .globe {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .top{
+    font-size: 2rem;
+  }
+}

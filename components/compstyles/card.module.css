@@ -1,0 +1,140 @@
+.pro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background: linear-gradient(to bottom,
+      rgba(255, 0, 214, 0.74),
+      rgba(119, 37, 201, 1));
+  width: 14.4rem;
+  height: 17.025rem;
+
+}
+
+.in {
+  height: 99%;
+  width: 98%;
+  padding: 0.8rem 0;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  justify-content: space-between;
+  padding-top: 0;
+  padding-bottom: 0.5rem;
+
+}
+
+.proin {
+  width: 100%;
+  height: auto;
+/*   margin-top: 4px; */
+  background-color: black;
+  overflow: hidden;
+  border-radius: 1.01513rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius:0.5rem;
+  position: relative;
+  box-shadow: 0px 3.248px 3.248px 0px rgba(0, 0, 0, 0.25),
+    0px 3.248px 3.248px 4.061px rgba(0, 0, 0, 0.25) inset;
+
+}
+
+.protxt {
+  width: 90%;
+/*   height: 20%; */
+  text-align: center;
+  font-family: Krona One;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: white;
+  font-family: 'Krona One';
+}
+.longName{
+  font-size: 0.9rem;
+}
+.tooLongName{
+  font-size: 0.8rem;
+}
+.pos {
+  width: 90%;
+/*   height: 20%; */
+  text-align: center;
+  font-family: Jost;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: white;
+  text-transform: uppercase;
+}
+
+.proimg {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.imgOver {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 3.248px 3.248px 0px rgba(0, 0, 0, 0.25),
+    0px 3.248px 3.248px 4.061px rgba(0, 0, 0, 0.25) inset;
+}
+
+@media screen and (min-width: 1780px) {
+  .pro {
+    width: 15.4rem;
+    height: 19.025rem;
+  }
+
+  .in {
+    height: 98.5%;
+    width: 98.5%;
+  }
+
+  .proin {
+    width: 9.17175rem;
+    height: 10.999rem;
+    border-radius: 1.01513rem;
+    overflow: hidden;
+    /* background: url("../../public/img.jpg"), lightgray 50% / cover no-repeat; */
+    box-shadow: 0px 3.248px 3.248px 0px rgba(0, 0, 0, 0.25),
+      0px 3.248px 3.248px 4.061px rgba(0, 0, 0, 0.25) inset;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius:0.5rem;
+  }
+
+  .protxt {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  .longName{
+    font-size: 0.9rem;
+  }
+  .tooLongName{
+    font-size: 0.8rem;
+  }
+
+  .proimg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (width< 400px) {
+  .pro {
+    width: 12rem;
+    height: 14.5rem;
+  }
+
+}

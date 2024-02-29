@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Krona+One&display=swap');
+
+
+@font-face {
+  font-family: 'gos';
+  src: url('/fonts/gos.ttf');
+}
+
+:root,
+html,
+body {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  overflow-x: hidden;
+  --gradient-angle: 0deg;
+  color: #ffffff55;
+}
+
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(250, 250, 250, 0) !important;
+  -webkit-focus-ring-color: rgba(250, 250, 250, 0) !important;
+  outline: none !important;
+}
+
+.carouseldiv {
+  padding: 0 12rem;
+}
+
+
+input[type=radio] {
+  /* accent-color: #451C4F; */
+  width: 20px;
+  height: 20px;
+  margin-left: 0.9rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+@media (width<1000px) {
+  .carouseldiv {
+    padding: 0 10rem;
+  }
+}
+
+@media (width<800px) {
+  .carouseldiv {
+    padding: 0 7rem;
+  }
+
+  input[type=radio] {
+    width: 15px;
+    height: 15px;
+    margin-left: 0.8rem;
+    margin-right: 0.6rem;
+    background:transparent;
+  }
+}
+
+
+@media (width> 800px) {
+
+  .carouseldiv {
+    margin-top: -3rem;
+  }
+}
+@media (width<600px) {
+  .carouseldiv {
+    padding: 0 1rem;
+  }
+}
+
+@media (width<500px) {
+  .carouseldiv {
+    padding: 0 1rem;
+  }
+}
+
+@media (width<400px) {
+  .carouseldiv {
+    padding: 0 1rem;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media (width>1000px){
+  .parPageDiv{
+    margin-top: 5rem;
+  }
+}

@@ -1,0 +1,62 @@
+.menu {
+    width: 247px;
+    height: 46px;
+    margin-bottom: 10vw;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 0, 214, 0.74);
+    color: #FFF;
+    padding: 10px;
+    padding-left: 15px;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
+}
+
+.bor {
+    width: 247px;
+    height: 46px;
+    margin-bottom: 10vw;
+    border-radius: 10px;
+    color: #FFF;
+    padding: 10px;
+    padding-left: 15px;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
+}
+
+
+@media screen and (min-width: 450px) {
+    .menu,
+    .bor {
+        width: 320px;
+        height: 80px;
+        font-size: 4vw;
+    }
+
+}
+@media screen and (min-width: 612px) {
+    .menu,
+    .bor {
+        width: 340px;
+        height: 100px;
+        margin-bottom: 8vw;
+        font-size: 5vw;
+    }
+
+}
+@media screen and (max-width: 380px) {
+    .menu,
+    .bor {
+        
+    }
+
+}

@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /admin/dashboard
+Disallow: /merch/
+Disallow: /merch
+
+Sitemap: https://www.technika.ae.org/sitemap.xml

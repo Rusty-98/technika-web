@@ -1,0 +1,203 @@
+.mainDiv {
+    color: red;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    background-image: linear-gradient(rgba(119, 37, 201, 0.38), rgba(246, 2, 213, 0.23));
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.topcontainer {
+    position: absolute;
+    top: 0.5%;
+    left: 35%;
+    height: 100vh;
+}
+
+.headingcontainer {
+    color: white;
+    font-family: "Jost";
+}
+
+.firstpara {
+    font-size: 1.5em;
+}
+
+.secondpara {
+    font-size: 0.5em;
+}
+
+.thirdpara {
+    font-family: "krona";
+    -webkit-text-stroke: 0.01em rgba(127, 127, 127, 1);
+    font-size: 7.5em;
+    mix-blend-mode: screen;
+    position: relative;
+    bottom: 1.1em;
+    left: 0.3em;
+}
+
+.fourthpara {
+    position: absolute;
+    top: 10.5em;
+}
+
+.para1 {
+    position: absolute;
+    top: 0.7em;
+    color: white;
+}
+
+.para2 {
+    position: relative;
+    top: 0.7em;
+    right: 14.5em;
+    color: white;
+    font-family: "jost"
+}
+
+.para4 {
+    position: relative;
+    top: 0.4em;
+    right: 13em;
+    color: white;
+}
+
+.inputbox {
+    width: 40em;
+    height: 40px;
+    background: transparent;
+    border-radius: 10px;
+    border: 2px solid white;
+    color: white;
+}
+
+.inputbox3 {
+    width: 10em;
+    height: 90px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.button {
+    position: relative;
+    top: 0.8em;
+
+    background-blend-mode: screen;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 7em;
+    background: transparent;
+    COLOR: WHITE;
+    FONT-FAMILY: "krona "
+}
+
+.inputboxcontainer {
+    position: relative;
+    top: 0.11em;
+}
+
+.inputboxcontainer2 {
+    position: relative;
+    top: 1em;
+    right: 11.5em;
+}
+
+.inputboxcontainer3 {
+    position: relative;
+    top: 0.1em;
+}
+
+.inputboxcontainergender {
+    position: relative;
+    top: 0.5em;
+    right: 12.5em;
+}
+
+.paragender {
+    position: relative;
+    top: 0.1em;
+    right: 2.5em;
+    font-family: "krona";
+    color: white;
+}
+
+.radiobox {
+    color: white;
+    font-family: "jost"
+}
+
+
+@media only screen and (max-width:412px) {
+    .container {
+        height: 100vh;
+    }
+
+    .topcontainer {
+        position: absolute;
+        top: 4%;
+        left: 10%;
+        height: 100vh;
+    }
+
+    .headingcontainer {
+        position: relative;
+        right: 0.05em;
+    }
+
+    .thirdpara {
+        font-size: 5.5em;
+        position: relative;
+        bottom: 1em;
+    }
+
+    .inputbox {
+        width: 300px;
+        height: 50px;
+    }
+
+    .fourthpara {
+        top: 10em;
+    }
+
+    .container {
+        height: 100vh;
+    }
+
+    .para2 {
+        right: 7em;
+    }
+
+    .para4 {
+        right: 6em;
+    }
+
+    .inputboxcontainer2 {
+        position: relative;
+        right: 4em;
+        top: 2em;
+    }
+
+    .inputboxcontainergender {
+        position: relative;
+        right: 5.5em;
+    }
+
+    .button {
+        position: relative;
+        top: 6em;
+        height: 30px;
+    }
+
+    .inputboxcontainer3 {
+        position: relative;
+        top: 3em;
+    }
+
+    .inputbox3 {
+        height: 120px;
+    }
+}

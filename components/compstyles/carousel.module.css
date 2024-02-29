@@ -1,0 +1,63 @@
+.carbg {
+    width: 100%;
+    height: 22rem;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 0.23rem;
+    background: linear-gradient(to bottom, rgba(255, 0, 212, 0.544), rgba(119, 37, 201, 0.647));
+}
+
+.carImg {
+    width: 100%;
+    height: 22rem;
+    border-radius: 2rem;
+    object-fit: cover;
+    opacity: 0.8;
+    margin-bottom: 0;
+    /* transform: translateY(0.5%) scale(1.1); */
+    border: 3px solid rgba(255, 0, 212, 0.544);
+    
+}
+
+
+@media (width<1200px) {
+    .carImg {
+        width: 100%;
+        height: 20rem;
+        border-radius: 2rem;
+    }
+}
+
+@media (width<1000px) {
+    .carImg {
+        width: 100%;
+        height: 18rem;
+        border-radius: 2rem;
+    }
+}
+
+@media (width<800px) {
+    .carImg {
+        width: 100%;
+        height: 17rem;
+        border-radius: 2rem;
+    }
+}
+
+@media (width<700px) {
+    .carImg {
+        width: 100%;
+        height: 14rem;
+        border-radius: 2rem;
+    }
+}
+
+@media (width<600px) {
+    .carImg {
+        width: 100%;
+        height: 10rem;
+        border-radius: 2rem;
+    }
+}

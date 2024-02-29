@@ -1,0 +1,67 @@
+.circle {
+    /* border: 1px solid black; */
+    display: flex;
+    width: 10rem;
+    height: 10rem;
+    justify-content: center;
+    background-color: white;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 50%;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+
+.titleStroke {
+    font-size: 10rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    width: 70vw;
+    height: auto;
+    margin: auto;
+}
+
+@media (width<800px) {
+    .circle {
+        width: 8rem;
+        height: 8rem;
+        padding: 0.7rem;
+    }
+}
+
+@media (width<700px) {
+    .circle {
+        width: 7rem;
+        height: 7rem;
+        padding: 0.6rem;
+    }
+}
+
+@media (width<600px) {
+    .circle {
+        width: 6rem;
+        height: 6rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (width<500px) {
+    .circle {
+        width: 5rem;
+        height: 5rem;
+        padding: 0.4rem;
+    }
+}
+
+@media (width<400px) {
+    .circle {
+        width: 4rem;
+        height: 4rem;
+        padding: 0.2rem;
+    }
+}

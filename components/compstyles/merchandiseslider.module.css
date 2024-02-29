@@ -1,0 +1,178 @@
+.main {
+    overflow: hidden;
+    padding: 2rem 0 0.4rem 0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.slider {
+    display: flex;
+    padding: 4rem;
+    overflow-x: auto;
+    gap: 4rem;
+    width: 100%;
+}
+
+.slide {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    border-radius: 2.5rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 18vw;
+    height: 24vw;
+    object-fit: cover;
+
+}
+
+/* Define the scrollbar width and color */
+.slider::-webkit-scrollbar {
+    height: 4px;
+    display: none;
+}
+
+
+/* Track */
+.slider::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    display: none;
+
+}
+
+
+/* Handle */
+.slider::-webkit-scrollbar-thumb {
+    background: #88888885;
+    display: none;
+}
+
+
+/* Handle on hover */
+.slider::-webkit-scrollbar-thumb:hover {
+    background: #7777779c;
+    display: none;
+
+}
+
+.name {
+    color: black;
+    font-size: '1.5rem';
+    letter-spacing: '0.12rem';
+    font-family: 'Krona One';
+    margin-bottom: '0';
+    margin-top: '0';
+    font-weight: 800;
+    color: rgb(70, 70, 70);
+}
+.keemat{
+    font-family: Jost;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.details {
+display: flex;
+justify-content: space-around;
+color: white;
+align-items: center;
+}
+
+.buy {
+    height: 2.011rem;
+    width: 5.963rem;
+    background: linear-gradient(to bottom,
+            rgba(255, 0, 214, 0.74),
+            rgba(119, 37, 201, 1));
+    border-radius: 0.278rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    font-family: Jost;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+.buy:hover {
+    box-shadow: 0 0 10px white;
+    transform: scale(0.98);
+}
+
+
+.specialoffer{
+    position: absolute;
+    top: -0.7rem;
+    left: -1rem;
+    width: 6rem;
+    height: auto;
+}
+
+@media (width<700px){
+    .specialoffer{
+        top: -0.4rem;
+        left: -0.56rem;
+        width: 4rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (width<800px) {
+
+
+    .slider {
+        display: flex;
+        padding: 1rem;
+        overflow-x: auto;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .image {
+        border-radius: 0.9rem;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        width: 35vw;
+        height: 50vw;
+        object-fit: cover;
+    }
+
+    .name {
+        letter-spacing: '0.05rem';
+        font-size: '0.4rem';
+    }
+
+.keemat{
+    font-size: 1rem;
+}
+.buy {
+    border-radius: 0.278rem;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    font-family: Jost;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.8rem;
+    height: 1.8rem;
+    width: 4.8rem;
+}
+
+
+
+}

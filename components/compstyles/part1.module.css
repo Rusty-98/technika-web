@@ -1,0 +1,330 @@
+.mainHeading {
+    color: #FFF;
+    text-align: center;
+    font-family: Jost;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.inpDiv label {
+    margin-left: 0.5rem;
+}
+
+
+.subHeading {
+    color: #FFF;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: Jost;
+    font-weight: 300;
+    line-height: 1.5rem;
+    text-align: center;
+}
+
+.mainbg {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(rgba(119, 37, 201, 0.38), rgba(246, 2, 213, 0.23));
+
+
+}
+
+.formContent {
+    margin: 6rem auto;
+    border-radius: 2rem;
+    padding: 4rem;
+    padding-top: 0;
+    width: 100%;
+    height: auto;
+    max-width: 50vw;
+    background-color: rgba(225, 225, 225, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    
+}
+
+
+.partContent {
+    margin: 1rem auto;
+    height: 90%;
+    width: 100%;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Krona One';
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+.inpDiv {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    font-family: 'Krona One';
+    gap: 0.4rem;
+    margin-top: 2rem;
+}
+
+.guidelines{
+    font-family: 'Jost';
+    font-size: 1.5rem;
+
+}
+.guidelineDisk{
+    width: 1rem;
+    height: 1rem;
+    margin-right: 1rem;
+    transform: translateY(25%);
+}
+
+.formTitle {
+    font-family: "Krona One";
+    font-size: 3rem;
+    color: transparent;
+    -webkit-text-stroke: 0.1px #c5c5c5;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.tabIndexDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 30vw;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.tabIndex {
+    font-family: Krona One;
+    font-size: 1.6rem;
+}
+
+.inputBox {
+    display: block;
+    width: 100%;
+    height: 4rem;
+    background: transparent;
+    border-radius: 10px;
+    border: 3px solid white;
+    color: rgb(214, 214, 214);
+    outline: none;
+    font-size: 1.5rem;
+    padding: 0.2rem 0.7rem;
+}
+
+
+.myButton {
+    font-family: 'Krona One';
+    top: 1.5em;
+    background-blend-mode: screen;
+    border: 3px solid white;
+    border-radius: 0.7rem;
+    background: transparent;
+    color: WHITE;
+    font-size: 1.2rem;
+    padding: 0.5rem 2rem;
+    margin: 4rem auto;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 300;
+}
+
+.myButton:hover {
+    letter-spacing: 0.2rem;
+}
+
+.qrdiv {
+    width: 100%;
+    border: 3px solid white;
+    padding: 0.4rem 1rem;
+    border-radius: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3 ease-in-out;
+
+}
+
+.qrdiv:hover {
+    scale: 0.99;
+}
+.dndpara {
+    min-height: 200px;
+    padding: 2rem;
+     width: '50%'
+}
+
+.inpDiv select option {
+    transition: all 0.2s ease-in-out; /* Smooth transition on hover */
+  }
+
+.inpDiv select option {
+    color: white; /* Set the text color */
+    background-color: #2e2e2e; /* Set the background color */
+    border: 2px solid white; /* Set the border color and width */
+    padding: 8px; /* Adjust padding as needed */
+    border-radius: 4px; /* Add border-radius for rounded corners */
+  }
+  
+.inpDiv select option:focus{
+    color: white; /* Set the text color */
+    background-color: #2e2e2e; /* Set the background color */
+    border: 2px solid white; /* Set the border color and width */
+    padding: 8px; /* Adjust padding as needed */
+    border-radius: 4px; /* Add border-radius for rounded corners */
+  }
+
+
+@media (width> 1100px) {
+
+    #radioinp div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+}
+/* @media(width>1000px){
+    .mainbg{
+        margin-top: -3rem;
+    }
+} */
+
+
+
+@media (width< 1000px) {
+    .tabIndexDiv {
+        width: 70vw;
+    }
+
+    .tabIndex {
+        font-size: 1.2rem;
+    }
+
+    .formContent {
+        max-width: 80vw;
+        padding: 1rem;
+    }
+
+    .mainHeading {
+        font-size: 1.4rem;
+    }
+
+    .formTitle {
+        font-size: 2.8rem;
+    }
+
+    .inpDiv {
+        width: 90%;
+    }
+
+    .subHeading {
+        font-size: 1rem;
+    }
+
+    .inputBox {
+        height: 3.4rem;
+    }
+
+    #radioinp div {
+        display: flex;
+    }
+
+    #radioinp>div label {
+        font-size: 0.9rem;
+    }
+
+    .dndpara {
+        font-size: 0.8rem;
+        min-height: 150px;
+        padding: 1rem;
+    }
+    .dndheading{
+        font-size: 0.9rem;
+    }
+}
+
+
+@media (width< 800px) {
+    .tabIndexDiv {
+        width: 60vw;
+    }
+
+    .tabIndex {
+        font-size: 1rem;
+    }
+
+    .formContent {
+        max-width: 90vw;
+        padding: 1rem;
+    }
+
+    .mainHeading {
+        font-size: 1.2rem;
+    }
+
+    .formTitle {
+        font-size: 2.2rem;
+    }
+
+    .inpDiv {
+        width: 90%;
+    }
+
+    .subHeading {
+        font-size: 1rem;
+    }
+
+    .inputBox {
+        height: 3rem;
+    }
+
+    .radioOpt {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+    }
+
+    #radioinp>div label {
+        font-size: 0.9rem;
+    }
+
+    .dndpara {
+        font-size: 0.8rem;
+        min-height: 150px;
+        padding: 1rem;
+    }
+    .dndheading{
+        font-size: 0.9rem;
+    }
+    .guidelineDisk{
+        width: 0.8rem;
+        height: 0.8rem;
+        margin-right: 1rem;
+        transform: translateY(28%);
+    }
+    .guidelines{
+        font-size: 1.3rem;
+    
+    }
+}
+
+@media (width<400px){
+    .formTitle{
+        font-size: 1.8rem;
+        -webkit-text-stroke: 0.3px white;
+    }
+}

@@ -1,0 +1,36 @@
+
+
+.maincontainer {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.bgImage {
+  width: 100%;
+  height: auto;
+}
+
+.centeredLogo img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  height: auto;
+  margin: auto;
+  transform: translate(-50%, -50%);
+}
+
+
+@media (width>800px){
+    .centeredLogo img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40vw;
+        height: auto;
+        margin: auto;
+        transform: translate(-50%, -50%);
+      }
+
+}

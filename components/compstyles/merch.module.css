@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+
+
+.main2 {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 50px;
+    column-gap: 50px;
+    justify-content: space-evenly;
+
+}
+
+.box {
+    width: 28vw;
+    height: 28vw;
+    border-radius: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom,
+            rgba(255, 0, 214, 0.74),
+            rgba(119, 37, 201, 1));
+    /* box-shadow: 0 4px 4px 0 rgba(255, 0, 214, 0.74), 0 4px 4px 0 rgba(119, 37, 201, 1); */
+}
+
+.in {
+    height: 97%;
+    width: 97%;
+    border-radius: 2.5rem;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.merchimg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-position: center;
+    object-fit: contain;
+    scale: 1.4;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    align-items: center;
+    }
+    .keemat{
+        font-family: Jost;
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+    
+
+
+
+.buy {
+    height: 2.011rem;
+    width: 5.963rem;
+    background: linear-gradient(to bottom,
+            rgba(255, 0, 214, 0.74),
+            rgba(119, 37, 201, 1));
+    border-radius: 0.278rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: 15px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    font-family: Jost;
+    font-weight: 700;
+    text-align: center;
+}
+
+.buy:hover {
+    box-shadow: 0 0 10px white;
+    transform: scale(0.98);
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .main {
+        column-gap: 1.5rem;
+    }
+
+    .box {
+        border-radius: 0.9rem;
+        width: 56vw;
+        height: 56vw;
+    }
+
+    .in {
+        border-radius: 0.9rem;
+    }
+
+    .merchimg{
+        height: 100%;
+        width: 90%;
+    }
+
+    .buy {
+        margin-left: 8px;
+        height: 1.991rem;
+        width: 4.963rem;
+    }
+}
+
+.specialoffer{
+    position: absolute;
+    top: -0.7rem;
+    left: -1rem;
+    width: 7rem;
+    height: auto;
+    z-index: 9;
+}
+
+@media (width<700px){
+    .specialoffer{
+        top: -0.4rem;
+        left: -0.56rem;
+        width: 4rem;
+    } 
+}

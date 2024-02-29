@@ -1,0 +1,22 @@
+.heading{
+    font-size: 4rem;
+    color: white;
+}
+.homelink{
+    color: rgb(207, 207, 207);
+font-size: 1rem;
+text-align: center;
+text-decoration: none;
+margin-top: 2rem;
+text-align: center;
+}
+
+.homelink:hover{
+    color: white;
+}
+
+@media (width<800px){
+    .heading{
+        font-size: 2rem;
+    }
+}

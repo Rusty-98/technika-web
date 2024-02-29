@@ -1,0 +1,57 @@
+.techart {
+    width: 60vw;
+    height: auto;
+    margin-top: 9rem;
+}
+
+.mainDiv {
+    color: white;
+    text-align: center;
+}
+
+.mainDiv h1{
+    margin: 0.6rem;
+    font-family: 'Krona One';
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+}
+
+.table{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-family: Jost;
+}
+
+.tablechild{
+    max-width: 45%;
+    font-size: 1.4rem;
+}
+.tablechild2{
+    max-width: 30%;
+    font-size: 1.3rem;
+}
+.tablechild2 img{
+    width: 30%;
+    height: auto;
+}
+@media(width<800px) {
+    .techart {
+        width: 90vw;
+        margin-top: 2rem;
+        height: auto;
+    }
+    .table{
+        flex-direction: column;
+
+    }
+    .tablechild{
+        max-width: 90%;
+        margin: auto;
+    }
+    .tablechild2{
+        max-width: 90%;
+        margin: auto;
+    }
+}

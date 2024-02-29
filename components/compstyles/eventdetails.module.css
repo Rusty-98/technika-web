@@ -1,0 +1,303 @@
+.dialog {
+    width: 70%;
+    min-height: 70vh;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    max-height: 100%;
+}
+
+.dialogContent {
+    color: white;
+    width: 100%;
+}
+
+.name {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    font-family: Jost;
+    font-weight: 900;
+    border-bottom: 2px solid rgba(255, 0, 214, 0.94);
+    padding: 0 3rem;
+    padding-bottom: 1rem;
+
+}
+
+.tvflex {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
+.tvflexChild {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Krona One';
+    text-align: center;
+}
+
+.venuePar {
+    margin: 4rem 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Krona One';
+    border: 2px solid white;
+    padding: 1rem;
+    border-radius: 1.2rem;
+}
+
+.button {
+    font-family: 'Krona One';
+    background-color: white;
+    padding: 1rem 4rem;
+    color: black;
+    border-radius: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+
+.button:hover {
+    scale: 0.99;
+}
+
+.submitButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+    font-size: 3rem;
+    font-family: 'Jost';
+    padding: 0.5rem 4rem 0.9rem 4rem;
+    border-radius: 1.5rem;
+    border: 3px solid rgba(255, 0, 214, 0.74);
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10rem!important;
+}
+.submitButton:hover{
+    scale: 0.99;
+    letter-spacing: 2.5px;
+    background-color: rgba(255, 255, 255, 0.108);
+}
+
+@media (width< 1600px) {
+    
+    .tvflexChild h2 {
+        font-size: 2.1rem;
+    }
+
+    .tvflexChild div {
+        font-size: 1.5rem;
+    }
+
+    .venuePar {
+        font-size: 1.3rem;
+    }
+
+    .button {
+        font-size: 1.2rem;
+        padding: 0.7rem 2.8rem;
+
+    }
+
+    .submitButton {
+        font-size: 1.7rem;
+    padding: 0.3rem 4rem 0.5rem 4rem;
+
+    }
+    
+}
+
+@media (width< 1400px) {
+    .name {
+        font-size: 3.1rem;
+    }
+
+    .tvflexChild h2 {
+        font-size: 2.5rem;
+    }
+
+    .tvflexChild div {
+        font-size: 1.5rem;
+    }
+
+    .venuePar {
+        font-size: 1.4rem;
+    }
+
+    .button {
+        font-size: 1.2rem;
+        padding: 1rem 3rem;
+
+    }
+
+    .submitButton {
+        margin-top: 5rem;
+        font-size: 2rem;
+    }
+}
+
+@media (width< 1000px) {
+    .dialog {
+        width: 80%;
+    }
+
+}
+
+@media (width< 890px) {
+    .dialog {
+        width: 90%;
+    }
+
+}
+
+@media (width< 800px) {
+    .name {
+        font-size: 3.5rem;
+    }
+
+    .tvflexChild h2 {
+        font-size: 2.1rem;
+    }
+
+    .tvflexChild div {
+        font-size: 1.2rem;
+    }
+
+    .venuePar {
+        font-size: 1.1rem;
+        padding: 0.7rem;
+    }
+
+    .button {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+
+    }
+
+    .submitButton {
+        margin-top: 5rem;
+        font-size: 2rem;
+    }
+}
+
+@media (width< 650px) {
+    .name {
+        font-size: 3rem;
+    }
+
+    .tvflexChild h2 {
+        font-size: 2rem;
+    }
+
+    .tvflexChild div {
+        font-size: 1rem;
+    }
+
+    .venuePar {
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 1rem 2rem;
+
+    }
+
+    .submitButton {
+        margin-top: 5rem;
+        font-size: 1.6rem;
+    }
+}
+
+@media (width< 600px) {
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .tvflexChild h2 {
+        font-size: 1.6rem;
+    }
+
+    .tvflexChild div {
+        font-size: 0.9rem;
+    }
+
+    .venuePar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+    .submitButton {
+        margin-top: 3rem;
+        font-size: 1.6rem;
+    }
+
+}
+
+@media (width< 500px) {
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .tvflexChild h2 {
+        font-size: 1.6rem;
+    }
+
+    .tvflexChild div {
+        font-size: 1rem;
+    }
+
+    .venuePar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        padding: 0.7rem;
+        text-align: center;
+        margin: 2.5rem 2rem;
+
+    }
+    .button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+
+    }
+}
+@media (width< 400px) {
+    .name {
+        font-size: 1.8rem;
+    }
+
+    .tvflexChild h2 {
+        font-size: 1.3rem;
+    }
+
+    .tvflexChild div {
+        font-size: 0.9rem;
+    }
+
+    .venuePar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        padding: 0.7rem;
+        text-align: center;
+    }
+    .button {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.3rem;
+
+    }
+}
