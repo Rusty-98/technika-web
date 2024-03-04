@@ -337,7 +337,7 @@ const RegistrationPage = () => {
                             {filteredRegistrations?.slice((currentPage - 1) * pageSize, currentPage * pageSize)
                                 .map((registration,index) => (
                                     <TableRow key={registration._id}>
-                                        <TableCell>{filteredRegistrations.length - index}</TableCell>
+                                        <TableCell>{filteredRegistrations.length - ((currentPage - 1) * pageSize + index)}</TableCell>
                                         <TableCell>{registration.item}</TableCell>
                                         <TableCell>{registration.price}</TableCell>
                                         <TableCell>{registration.college}</TableCell>
