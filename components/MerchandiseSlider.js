@@ -58,7 +58,7 @@ const MerchandiseSlider = () => {
             </div>
           </Link>
         </div>
-        <div className={styles.slide} style={{ position: 'relative' }}>
+        {/*<div className={styles.slide} style={{ position: 'relative' }}>
           <Image src={'/images/specialoffer.png'} width={512 / 3} height={512 / 3} alt='' className={styles.specialoffer} />
           <Link href={`/merchandiseform/tshirtcombo`} style={{ textDecoration: 'none' }}>
             <Image className={styles.image} src={'/images/merch/t-shirt-combo.png'} width={1170 / 3} height={2080 / 3} alt='' />
@@ -67,7 +67,7 @@ const MerchandiseSlider = () => {
               <p className={styles.buy}>Buy Now</p>
             </div>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );

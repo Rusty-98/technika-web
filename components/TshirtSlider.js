@@ -40,7 +40,7 @@ const TshirtSlider = () => {
         ))}
       </div>
 
-      <div className={styles.slider}>
+      {/* <div className={styles.slider}>
         <div className={styles.slide}>
           <Link href={`/merchandiseform/tshirtcombo`} style={{ textDecoration: 'none' }}>
             <Image className={styles.image2} src={'/images/merch/t-shirt-combo.png'} width={1080 / 1.5} height={710 / 1.5} alt='tshirt' />
@@ -54,7 +54,7 @@ const TshirtSlider = () => {
           </Link>
         </div>
 
-      </div>
+      </div> */}
 
     </div>
   )
