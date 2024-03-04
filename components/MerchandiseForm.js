@@ -75,6 +75,15 @@ const itemDetails = {
         image: '/images/merch/tshirt.JPG',
         qr: '/images/merchqr/tshirt.jpg'
     },
+
+    tshirtcombo: {
+        item: 'tshirtcombo',
+        heading: 'Tshirt Combo',
+        price: 849,
+        details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        image: '/images/merch/t-shirt-combo.png',
+        qr: '/images/merchqr/shirtComboQr.jpg'
+    },
 };
 
 
@@ -196,11 +205,19 @@ const MerchandiseForm = ({ item }) => {
         }
     };
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        let newSize;
+
+        if (name === "sizeBoy") {
+            newSize = `B-${value}`;
+        } else if (name === "sizeGirl") {
+            newSize = `G-${value}`;
+        }
+
         setFormData((prevData) => ({
             ...prevData,
-            [name]: value,
+            size: newSize
         }));
     };
 
@@ -324,6 +341,14 @@ const MerchandiseForm = ({ item }) => {
                 updatedFormData = {
                     ...updatedFormData,
                     tshirtVariant: 'boy print'
+                };
+            }
+
+            if (item === 'tshirtcombo') {
+                // Clear couponCode if coupon validation is not successful
+                updatedFormData = {
+                    ...updatedFormData,
+                    tshirtVariant: 'Tshirt Combo'
                 };
             }
 
@@ -646,9 +671,9 @@ const MerchandiseForm = ({ item }) => {
                                 </>}
 
                                 {/* Additional options for T-shirt */}
-                                {(item === 'tshirtg' || item === 'tshirtb') && (
+                                {(item === 'tshirtg' || item === 'tshirtb' || item === 'tshirtcombo') && (
                                     <>
-                                        <div className={styles.inpDiv}>
+                                        {item !== 'tshirtcombo' && <div className={styles.inpDiv}>
                                             <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
                                                 <label htmlFor="size">Size</label>
                                                 <div>
@@ -677,8 +702,70 @@ const MerchandiseForm = ({ item }) => {
                                                 <option value="XL">XL - Extra Large</option>
                                                 <option value="XXL">XXL - Extra Large</option>
                                             </select>
-                                        </div>
-                                        <div className={styles.inpDiv}>
+                                        </div>}
+                                        {item === 'tshirtcombo' && <>
+                                            <div className={styles.inpDiv}>
+                                                <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+                                                    <label htmlFor="sizeBoy">Size for Boy's Print</label>
+                                                    <div>
+                                                        <Button
+                                                            variant="contained"
+                                                            color="primary"
+                                                            onClick={handleOpenSizeChart}
+                                                        >
+                                                            Size Chart
+                                                        </Button>
+
+                                                    </div>
+
+                                                </div>
+                                                <select
+                                                    className={styles.inputBox}
+                                                    name="sizeBoy"
+                                                    id="sizeBoy"
+                                                    value={formData.sizeBoy}
+                                                    onChange={handleInputChange}
+                                                    required
+                                                >
+                                                    <option value="S">S - Small</option>
+                                                    <option value="M">M - Medium</option>
+                                                    <option value="L">L - Large</option>
+                                                    <option value="XL">XL - Extra Large</option>
+                                                    <option value="XXL">XXL - Extra Large</option>
+                                                </select>
+                                            </div>
+                                            <div className={styles.inpDiv}>
+                                                <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+                                                    <label htmlFor="size">Size for Girl's Print</label>
+                                                    <div>
+                                                        <Button
+                                                            variant="contained"
+                                                            color="primary"
+                                                            onClick={handleOpenSizeChart}
+                                                        >
+                                                            Size Chart
+                                                        </Button>
+
+                                                    </div>
+
+                                                </div>
+                                                <select
+                                                    className={styles.inputBox}
+                                                    name="sizeGirl"
+                                                    id="sizeGirl"
+                                                    value={formData.sizeGirl}
+                                                    onChange={handleInputChange}
+                                                    required
+                                                >
+                                                    <option value="S">S - Small</option>
+                                                    <option value="M">M - Medium</option>
+                                                    <option value="L">L - Large</option>
+                                                    <option value="XL">XL - Extra Large</option>
+                                                    <option value="XXL">XXL - Extra Large</option>
+                                                </select>
+                                            </div>
+                                        </>}
+                                        {item !== 'tshirtcombo' && <div className={styles.inpDiv}>
                                             <label htmlFor="nameOnTshirt">Name on T-shirt (Max 10 characters)</label>
                                             <input
                                                 className={styles.inputBox}
@@ -693,8 +780,42 @@ const MerchandiseForm = ({ item }) => {
                                                     }
                                                 }}
                                             />
-                                        </div>
-                                        <div className={styles.inpDiv}>
+                                        </div>}
+                                        {item === 'tshirtcombo' && (<>
+                                            <div className={styles.inpDiv}>
+                                                <label htmlFor="nameOnTshirt">Name on Boy's print T-shirt (Max 10 characters)</label>
+                                                <input
+                                                    className={styles.inputBox}
+                                                    type="text"
+                                                    name="nameOnTshirtBoy"
+                                                    id="nameOnTshirtBoy"
+                                                    value={formData.nameOnTshirtBoy}
+                                                    onChange={(e) => {
+                                                        // Limit input to 10 characters
+                                                        if (e.target.value.length <= 10) {
+                                                            handleInputChange(e);
+                                                        }
+                                                    }}
+                                                />
+                                            </div>
+                                            <div className={styles.inpDiv}>
+                                                <label htmlFor="nameOnTshirt">Name on Girl's print T-shirt (Max 10 characters)</label>
+                                                <input
+                                                    className={styles.inputBox}
+                                                    type="text"
+                                                    name="nameOnTshirtGirl"
+                                                    id="nameOnTshirtGirl"
+                                                    value={formData.nameOnTshirtGirl}
+                                                    onChange={(e) => {
+                                                        // Limit input to 10 characters
+                                                        if (e.target.value.length <= 10) {
+                                                            handleInputChange(e);
+                                                        }
+                                                    }}
+                                                />
+                                            </div>
+                                        </>)}
+                                        {item === 'tshirtcombo' ? "" : <div className={styles.inpDiv}>
                                             <label htmlFor="couponCode">Coupon Code</label>
                                             <input
                                                 className={styles.inputBox}
@@ -734,8 +855,8 @@ const MerchandiseForm = ({ item }) => {
                                             )}
 
 
-                                        </div>
-                                        {couponValidation.success && couponName !== 'GRUV'  && couponName !== 'OFFER33' &&
+                                        </div>}
+                                        {couponValidation.success && couponName !== 'GRUV' && couponName !== 'OFFER33' &&
                                             <>
                                                 <div style={{ marginTop: '0.5rem' }}>
                                                     <div style={{ marginTop: '3rem', color: 'white' }}>Amount Payable: <span style={{ textDecoration: 'line-through', opacity: '0.8', fontWeight: '300' }}>599</span> ₹359.40</div>
@@ -754,7 +875,7 @@ const MerchandiseForm = ({ item }) => {
                                         {!couponValidation.success &&
                                             <div>
                                                 <div style={{ marginTop: '0.5rem' }}>
-                                                    <div style={{ marginTop: '3rem', color: 'white' }}>Amount Payable: <span style={{ textDecoration: 'line-through', opacity: '0.8', fontWeight: '300' }}>599</span> ₹499</div>
+                                                    <div style={{ marginTop: '3rem', color: 'white' }}>Amount Payable: <span style={{ textDecoration: 'line-through', opacity: '0.8', fontWeight: '300' }}>{item === 'tshirtcombo' ? '₹999' : '₹599'}</span> {item === 'tshirtcombo' ? '₹849' : '₹499'}</div>
                                                 </div>
                                             </div>}
 

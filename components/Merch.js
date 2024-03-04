@@ -73,6 +73,20 @@ const Merch = () => {
                     </div>
                 </Link>
 
+                <Link href={`/merchandiseform/tshirtcombo`} style={{ textDecoration: 'none' }}>
+                    <div className={styles.box}>
+                        <div className={styles.in} style={{ position: 'relative', backgroundColor: '#DDDFE5' }}>
+                            <img src={'/images/specialoffer.png'} width={512 / 3} height={512 / 3} alt='' className={styles.specialoffer} />
+
+                            <img src={'/images/merch/t-shirt-combo.png'} className={styles.merchimg} alt="" />
+                        </div>
+                    </div>
+                    <div className={styles.details}>
+                        {/* You can display other details here */}
+                        <p className={styles.keemat}>{'₹849'}</p>
+                        <p className={styles.buy}>Buy Now</p>
+                    </div>
+                </Link>
 
 
 

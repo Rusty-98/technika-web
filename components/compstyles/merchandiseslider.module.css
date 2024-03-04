@@ -28,6 +28,17 @@
 
 }
 
+.image2 {
+    /* border: 2px solid white; */
+    border-radius: 2.5rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 30vw;
+    height: 24vw;
+    object-fit: cover;
+    margin-top: -10rem;
+
+}
+
 /* Define the scrollbar width and color */
 .slider::-webkit-scrollbar {
     height: 4px;
@@ -67,17 +78,18 @@
     font-weight: 800;
     color: rgb(70, 70, 70);
 }
-.keemat{
+
+.keemat {
     font-family: Jost;
     font-size: 1.5rem;
     font-weight: 900;
 }
 
 .details {
-display: flex;
-justify-content: space-around;
-color: white;
-align-items: center;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    align-items: center;
 }
 
 .buy {
@@ -106,7 +118,7 @@ align-items: center;
 }
 
 
-.specialoffer{
+.specialoffer {
     position: absolute;
     top: -0.7rem;
     left: -1rem;
@@ -114,11 +126,32 @@ align-items: center;
     height: auto;
 }
 
-@media (width<700px){
-    .specialoffer{
+@media (width<700px) {
+    .specialoffer {
         top: -0.4rem;
         left: -0.56rem;
         width: 4rem;
+    }
+
+    .image2 {
+        width: 45vw;
+        height: 60vw;
+        margin-top: -0rem;
+    }
+}
+
+@media (width<1180px) {
+    .image2 {
+        margin-top: -8rem;
+        width: 60vw;
+        height: 50vw;
+    }
+}
+@media (width<800px) {
+    .image2 {
+        width: 60vw;
+        height: 50vw;
+        margin-top: -0rem;
     }
 }
 
@@ -156,22 +189,23 @@ align-items: center;
         font-size: '0.4rem';
     }
 
-.keemat{
-    font-size: 1rem;
-}
-.buy {
-    border-radius: 0.278rem;
-    margin-top: 15px;
-    cursor: pointer;
-    transition: all ease 0.3s;
-    font-family: Jost;
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-    font-size: 0.8rem;
-    height: 1.8rem;
-    width: 4.8rem;
-}
+    .keemat {
+        font-size: 1rem;
+    }
+
+    .buy {
+        border-radius: 0.278rem;
+        margin-top: 15px;
+        cursor: pointer;
+        transition: all ease 0.3s;
+        font-family: Jost;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        font-size: 0.8rem;
+        height: 1.8rem;
+        width: 4.8rem;
+    }
 
 
 

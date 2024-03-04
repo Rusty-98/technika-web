@@ -35,7 +35,7 @@ const merchandiseItems = [
 const MerchandiseSlider = () => {
   return (
     <div className={styles.main}>
-      <TshirtSlider/>
+      <TshirtSlider />
       <div className={styles.slider}>
         {merchandiseItems.map((item, index) => (
           <div className={styles.slide} key={index}>
@@ -48,16 +48,26 @@ const MerchandiseSlider = () => {
             </Link>
           </div>
         ))}
-          <div className={styles.slide} style={{position:'relative'}}>
-          <Image src={'/images/specialoffer.png'} width={512 / 3} height={512 / 3} alt='' className={styles.specialoffer}/>
-            <Link href={`/merchandiseform/combo`} style={{ textDecoration: 'none' }}>
-              <Image className={styles.image} src={'/images/merch/combo.JPG'} width={1170 / 3} height={2080 / 3} alt='' />
-              <div className={styles.details}>
-                <p className={styles.keemat}>{'₹199'}</p>
-                <p className={styles.buy}>Buy Now</p>
-              </div>
-            </Link>
-          </div>
+        <div className={styles.slide} style={{ position: 'relative' }}>
+          <Image src={'/images/specialoffer.png'} width={512 / 3} height={512 / 3} alt='' className={styles.specialoffer} />
+          <Link href={`/merchandiseform/combo`} style={{ textDecoration: 'none' }}>
+            <Image className={styles.image} src={'/images/merch/combo.JPG'} width={1170 / 3} height={2080 / 3} alt='' />
+            <div className={styles.details}>
+              <p className={styles.keemat}>{'₹199'}</p>
+              <p className={styles.buy}>Buy Now</p>
+            </div>
+          </Link>
+        </div>
+        <div className={styles.slide} style={{ position: 'relative' }}>
+          <Image src={'/images/specialoffer.png'} width={512 / 3} height={512 / 3} alt='' className={styles.specialoffer} />
+          <Link href={`/merchandiseform/tshirtcombo`} style={{ textDecoration: 'none' }}>
+            <Image className={styles.image} src={'/images/merch/t-shirt-combo.png'} width={1170 / 3} height={2080 / 3} alt='' />
+            <div className={styles.details}>
+              <p className={styles.keemat}>{'₹849'}</p>
+              <p className={styles.buy}>Buy Now</p>
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
   );
