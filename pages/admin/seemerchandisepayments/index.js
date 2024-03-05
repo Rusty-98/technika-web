@@ -348,8 +348,8 @@ const RegistrationPage = () => {
                                         <TableCell>{registration.gender}</TableCell>
                                         {tshirtMode && (
                                             <>
-                                                <TableCell>{registration.size}</TableCell>
-                                                <TableCell>{registration.nameOnTshirt}</TableCell>
+                                                <TableCell>{registration.item === 'tshirtcombo' ? `B-${registration.sizeB}, G-${registration.sizeG}` : registration.size }</TableCell>
+                                                <TableCell>{registration.item === 'tshirtcombo' ? `B-${registration.nameOnTshirtB}, G-${registration.nameOnTshirtG}` : registration.nameOnTshirt}</TableCell>
                                                 <TableCell style={{ textAlign: 'center' }}>{registration.couponCode ? registration.couponCode : '-'}</TableCell>
                                                 <TableCell>{registration.tshirtVariant}</TableCell>
                                             </>

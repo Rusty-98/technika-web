@@ -12,7 +12,11 @@ const merchandiseformSchema = new mongoose.Schema({
     college: String,
     imageUrl: String,
     size: String,
+    sizeB: String,
+    sizeG: String,
     nameOnTshirt: String,
+    nameOnTshirtB: String,
+    nameOnTshirtG: String,
     couponCode: String,
     tshirtVariant: String,
     deliveredSuccessfully: {

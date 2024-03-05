@@ -16,6 +16,9 @@ const EventDetailsPage = () => {
     if (item === 'tshirtg') {
         headtitle = 'Tshirt Girl Print'
     }
+    if (item === 'tshirtcombo') {
+        headtitle = 'Tshirt Combo'
+    }
     else{
         headtitle = item
     }
