@@ -148,9 +148,6 @@ const MerchandiseForm = ({ item }) => {
     };
 
 
-
-
-
     const getFinalPriceAndQR = (couponName) => {
         let discountPercent = 0;
         let finalPrice = itemKiDetails?.price
@@ -171,7 +168,7 @@ const MerchandiseForm = ({ item }) => {
                 break;
             case 'OFFER30':
                 discountPercent = 30;
-                setDiscountPercent(33)
+                setDiscountPercent(30)
                 finalQR = '/images/merchqr/tshirtwithoffer30coupon.jpg'
                 finalPrice = (itemKiDetails?.MRP - ((itemKiDetails?.MRP * discountPercent) / 100)).toFixed(2);
                 console.log(`${finalPrice} ${discountPercent}%`)
