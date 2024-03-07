@@ -14,7 +14,8 @@ const itemDetails = {
     diary: {
         item: 'diary',
         heading: 'Diary',
-        price: '₹49',
+        price: 49,
+        MRP: 49,
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         image: '/images/merch/noteopen.webp',
         qr: '/images/merchqr/diary.jpg'
@@ -22,7 +23,8 @@ const itemDetails = {
     keychain: {
         item: 'keychain',
         heading: 'Key Chain',
-        price: '₹39',
+        price: 39,
+        MRP: 39,
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         image: '/images/merch/noteopen.webp',
         qr: '/images/merchqr/keychain2.jpg'
@@ -32,7 +34,8 @@ const itemDetails = {
     coffeemug: {
         item: 'coffeemug',
         heading: 'Coffee Mug',
-        price: '₹129',
+        price: 129,
+        MRP: 129,
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         image: '/images/merch/noteopen.webp',
         qr: '/images/merchqr/cup.jpg'
@@ -42,17 +45,18 @@ const itemDetails = {
     pen: {
         item: 'pen',
         heading: 'Pen',
-        price: '₹12',
+        price: 12,
+        MRP: 12,
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         image: '/images/merch/noteopen.webp',
         qr: '/images/merchqr/pen.jpg'
-
 
     },
     combo: {
         item: 'combo',
         heading: 'Combo',
-        price: '₹199',
+        price: 199,
+        MRP: 199,
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         image: '/images/merch/combo.JPG',
         qr: '/images/merchqr/combo.jpg'
@@ -62,7 +66,8 @@ const itemDetails = {
     tshirtb: {
         item: 'tshirtb',
         heading: 'Tshirt Boy Print',
-        price: 599,
+        price: 499,
+        MRP: 599,
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         image: '/images/merch/tshirt.JPG',
         qr: '/images/merchqr/tshirt.jpg',
@@ -70,7 +75,8 @@ const itemDetails = {
     tshirtg: {
         item: 'tshirtg',
         heading: 'Tshirt Girl Print',
-        price: 599,
+        price: 499,
+        MRP: 599,
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         image: '/images/merch/tshirt.JPG',
         qr: '/images/merchqr/tshirt.jpg'
@@ -79,6 +85,7 @@ const itemDetails = {
         item: 'tshirtcombo',
         heading: 'Tshirt Combo',
         price: 849,
+        MRP: 999,
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         image: '/images/merch/t-shirt-combo.png',
         qr: '/images/merchqr/shirtComboQr.jpg'
@@ -88,8 +95,11 @@ const itemDetails = {
 
 
 
+
+
 const MerchandiseForm = ({ item }) => {
     const router = useRouter()
+    const itemKiDetails = itemDetails[item];
     const freeforall = false;
     const [tabIndex, setTabIndex] = useState(0);
 
@@ -118,6 +128,10 @@ const MerchandiseForm = ({ item }) => {
     const [snackbarMessage, setSnackbarMessage] = useState('')
     const [otherCollege, setOtherCollege] = useState('')
     const [severity, setSeverity] = useState('warning')
+    // coupons
+    const [discountPercent, setDiscountPercent] = useState(0)
+    const [finalPrice, setFinalPrice] = useState(itemKiDetails?.price);
+    const [finalQR, setFinalQR] = useState(itemKiDetails?.qr);
     const [couponName, setCouponName] = useState('')
     const [couponValidation, setCouponValidation] = useState({
         loading: false,
@@ -137,9 +151,44 @@ const MerchandiseForm = ({ item }) => {
 
 
 
+    const getFinalPriceAndQR = (couponName) => {
+        let discountPercent = 0;
+        let finalPrice = itemKiDetails?.price
+        let finalQR = itemKiDetails?.qr
+        switch (couponName) {
+            case 'GRUV':
+                discountPercent = 33;
+                setDiscountPercent(33)
+                finalPrice = (itemKiDetails?.MRP - ((itemKiDetails?.MRP * discountPercent) / 100)).toFixed(2);
+                finalQR = '/images/merchqr/tshirtwithgruvcoupon.jpg'
+                break;
+            case 'OFFER33':
+                discountPercent = 33;
+                setDiscountPercent(33)
+                finalQR = '/images/merchqr/tshirtwithgruvcoupon.jpg'
+                finalPrice = (itemKiDetails?.MRP - ((itemKiDetails?.MRP * discountPercent) / 100)).toFixed(2);
+                console.log(`${finalPrice} ${discountPercent}%`)
+                break;
+            case 'OFFER30':
+                discountPercent = 30;
+                setDiscountPercent(33)
+                finalQR = '/images/merchqr/tshirtwithoffer30coupon.jpg'
+                finalPrice = (itemKiDetails?.MRP - ((itemKiDetails?.MRP * discountPercent) / 100)).toFixed(2);
+                console.log(`${finalPrice} ${discountPercent}%`)
+                break;
+            default:
+                discountPercent = 0;
+                setDiscountPercent(0);
+                finalQR = itemKiDetails?.qr;
+                finalPrice =itemKiDetails?.price;
+                console.log(`${finalPrice} ${discountPercent}%`)
+                break;
+        }
+
+        return { finalPrice, finalQR }
+    };
 
 
-    const itemKiDetails = itemDetails[item];
 
 
 
@@ -282,12 +331,9 @@ const MerchandiseForm = ({ item }) => {
                 }
             }
 
-            const itemKiDetails = itemDetails[item];
 
             // Remove the rupee symbol from the price if present
-            const cleanPrice = typeof itemKiDetails?.price === 'string'
-                ? parseInt(itemKiDetails?.price.replace('₹', ''), 10)
-                : itemKiDetails?.price;
+            const cleanPrice = itemDetails[item]?.price;
 
             if (!couponValidation.success) {
                 // Use itemKiDetails.price if no coupon code or unsuccessful coupon validation
@@ -297,28 +343,15 @@ const MerchandiseForm = ({ item }) => {
                     price: cleanPrice, // Adjust the default price as needed
                 };
             } else {
-                // Apply discount based on coupon code
-                let discountedPrice;
 
-                if (couponName === 'GRUV' || couponName === 'OFFER33') {
-                    discountedPrice = 401.33;
-                } else {
-                    // Add logic for other coupon codes if needed
-                    discountedPrice = 349.40;
-                }
                 console.log('deb1')
                 updatedFormData = {
                     ...updatedFormData,
                     couponCode: couponValidation.success ? formData.couponCode : '',
-                    price: discountedPrice,
+                    price: finalPrice,
                 };
             }
             console.log('deb2')
-
-            // If the final price is 599, set it to 499
-            if (updatedFormData.price === 599) {
-                updatedFormData.price = 499;
-            }
 
             console.log('deb3')
 
@@ -362,7 +395,6 @@ const MerchandiseForm = ({ item }) => {
             // Check if the request was successful (status code 2xx)
             if (response.ok) {
                 // Optionally, reset form data or perform other actions upon successful submission
-
                 setFormData({
 
                     college: '',
@@ -426,6 +458,7 @@ const MerchandiseForm = ({ item }) => {
             if (response.ok) {
                 setCouponValidation({ loading: false, success: true, message: 'Coupon Code Applied Successfully' });
                 setCouponName(result.name)
+
                 // Update the form data with coupon details
                 setFormData((prevData) => ({
                     ...prevData,
@@ -437,6 +470,10 @@ const MerchandiseForm = ({ item }) => {
             } else {
                 setCouponValidation({ loading: false, success: false, message: result.message });
             }
+            const { finalPrice, finalQR } = getFinalPriceAndQR(result.name);
+
+            setFinalPrice(finalPrice);
+            setFinalQR(finalQR);
         } catch (error) {
             console.error('Error applying coupon code:', error.message);
             setCouponValidation({ loading: false, success: false, message: 'Internal Server Error' });
@@ -819,7 +856,6 @@ const MerchandiseForm = ({ item }) => {
                                                 value={formData.couponCode}
                                                 onChange={handleInputChange}
                                             />
-                                            {/* You can add additional validation logic for coupon code */}
                                             <Button
                                                 variant="contained"
                                                 color="primary"
@@ -828,56 +864,29 @@ const MerchandiseForm = ({ item }) => {
                                             >
                                                 {couponValidation.loading ? 'Verifying' : 'Apply'}
                                             </Button>
+
+                                            {/* coupon validation messages */}
                                             {couponValidation.message && (
                                                 <>
                                                     <div style={{ color: couponValidation.success ? 'green' : 'red', marginTop: '0.5rem', fontSize: '0.8rem' }}>
                                                         {couponValidation.message}
                                                     </div>
 
-                                                    {couponValidation.success && (couponName === 'GRUV' || couponName === 'OFFER33') && (
-                                                        <div style={{ color: 'green', marginTop: '0.5rem', fontSize: '0.8rem' }}>
-                                                            33% discount on ₹599
-                                                        </div>
-                                                    )}
-
-                                                    {couponValidation.success && couponName !== 'GRUV' && couponName !== 'OFFER33' && (
-                                                        <div style={{ color: 'green', marginTop: '0.5rem', fontSize: '0.8rem' }}>
-                                                            40% discount on ₹599
-                                                        </div>
+                                                    {couponValidation.success && (
+                                                        <>
+                                                            <div style={{ color: 'green', marginTop: '0.5rem', fontSize: '0.8rem' }}>
+                                                                {discountPercent}% discount on ₹599
+                                                            </div>
+                                                        </>
                                                     )}
                                                 </>
                                             )}
-
-
+                                            <div style={{ marginTop: '0.5rem' }}>
+                                                <div style={{ marginTop: '3rem', color: 'white' }}>Amount Payable: <span style={{ textDecoration: 'line-through', opacity: '0.8', fontWeight: '300' }}>{itemKiDetails?.MRP}</span> {finalPrice}</div>
+                                            </div>
                                         </div>}
-                                        {couponValidation.success && couponName !== 'GRUV' && couponName !== 'OFFER33' &&
-                                            <>
-                                                <div style={{ marginTop: '0.5rem' }}>
-                                                    <div style={{ marginTop: '3rem', color: 'white' }}>Amount Payable: <span style={{ textDecoration: 'line-through', opacity: '0.8', fontWeight: '300' }}>599</span> ₹359.40</div>
-                                                </div>
-                                            </>
-
-                                        }
-                                        {couponValidation.success && couponName && (couponName === 'GRUV' || couponName === 'OFFER33') &&
-
-                                            <div>
-                                                <div style={{ marginTop: '0.5rem' }}>
-                                                    <div style={{ marginTop: '3rem', color: 'white' }}>Amount Payable: <span style={{ textDecoration: 'line-through', opacity: '0.8', fontWeight: '300' }}>599</span> ₹401.33</div>
-                                                </div>
-                                            </div>}
-
-                                        {!couponValidation.success &&
-                                            <div>
-                                                <div style={{ marginTop: '0.5rem' }}>
-                                                    <div style={{ marginTop: '3rem', color: 'white' }}>Amount Payable: <span style={{ textDecoration: 'line-through', opacity: '0.8', fontWeight: '300' }}>{item === 'tshirtcombo' ? `₹999` : `₹599`}</span> {item === 'tshirtcombo' ? `₹849` : `₹499`}</div>
-                                                </div>
-                                            </div>}
-
                                     </>
                                 )}
-
-
-
 
                                 {(!freeforall) ? <>
                                     <div className={styles.inpDiv}>
@@ -890,7 +899,6 @@ const MerchandiseForm = ({ item }) => {
                                         Upload or Drag and Drop the Payment Recipt below
                                     </p>
                                     {!imageFile && (
-
                                         <div {...getRootProps()} style={{ cursor: 'pointer', border: '3px solid white', marginBottom: '2rem', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', borderRadius: '2rem', maxWidth: '70%' }} className={styles.dndpara}>
                                             <input {...getInputProps()} />
                                             <p style={{ color: 'white' }} >Drag and drop an image here, or click to select an image</p>
@@ -944,7 +952,7 @@ const MerchandiseForm = ({ item }) => {
                     <Button
                         variant="contained"
                         color="primary"
-                        onClick={() => handleDownloadQR(itemKiDetails?.qr)}
+                        onClick={() => handleDownloadQR(finalQR)}
                         style={{ marginBottom: '1rem', marginTop: '1rem', border: '10x solid red' }}
                     >
                         Download QR Code
@@ -955,13 +963,7 @@ const MerchandiseForm = ({ item }) => {
                         <Image
                             width={805}
                             height={799}
-                            src={
-                                couponValidation.success
-                                    ? couponName === 'GRUV' || couponName === 'OFFER33'
-                                        ? '/images/merchqr/tshirtwithgruvcoupon.jpg'
-                                        : '/images/merchqr/tshirtwithcoupon.jpg'
-                                    : itemKiDetails?.qr
-                            }
+                            src={finalQR}
                             alt="QR Code"
                             style={{ width: '100%', height: 'auto' }}
                         />
