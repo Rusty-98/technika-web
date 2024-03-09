@@ -177,7 +177,7 @@ const MerchandiseForm = ({ item }) => {
                 discountPercent = 0;
                 setDiscountPercent(0);
                 finalQR = itemKiDetails?.qr;
-                finalPrice =itemKiDetails?.price;
+                finalPrice = itemKiDetails?.price;
                 console.log(`${finalPrice} ${discountPercent}%`)
                 break;
         }
@@ -424,17 +424,8 @@ const MerchandiseForm = ({ item }) => {
     const handleWarningClose = () => {
         setShowWarning(false);
     };
-    const handleDownloadQR = () => {
-        let qrImageUrl = itemKiDetails?.qr; // Default QR code
-
-        if (couponValidation.success) {
-            // Use a different QR code if the coupon is successfully applied
-            qrImageUrl = couponName === 'GRUV' || couponName === 'OFFER33'
-                ? '/images/merchqr/tshirtwithgruvcoupon.jpg'
-                : '/images/merchqr/tshirtwithcoupon.jpg';
-        }
-
-        // Use the file-saver library to trigger the download
+    const handleDownloadQR = (finalQR) => {
+        let qrImageUrl = finalQR; // Default QR code
         saveAs(qrImageUrl, `Technika24_QRCode_for_${itemKiDetails?.heading}.png`);
     };
 
