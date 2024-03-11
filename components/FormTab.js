@@ -368,7 +368,7 @@ const FormTab = ({ updatedEventName }) => {
                                         onChange={handleInputChange}
                                         required
                                     >
-                                        <option value="">Select Branch</option>
+                                            <option value="">Select Branch</option>
                                         <option value="CSE">CSE</option>
                                         <option value="IT">IT</option>
                                         <option value="ET">ET</option>
@@ -383,6 +383,14 @@ const FormTab = ({ updatedEventName }) => {
                                         <option value="BE">BE</option>
                                         <option value="LT">LT</option>
                                         <option value="BBA">BBA</option>
+                                        <option value="BCA">BCA</option>
+                                        <option value="MBA">MBA</option>
+                                        <option value="MCA">MCA</option>
+                                        <option value="M.tech">M.tech</option>
+                                        <option value="M.sc">M.sc</option>
+                                        <option value="PhD">PhD</option>
+                                        <option value="BSMS">BSMS</option>
+                                        <option value="OTHER">Other</option>
                                     </select>
                                 </div>
 
