@@ -153,14 +153,14 @@ const FormTab = ({ updatedEventName }) => {
                 ...formData,
                 eventName: updatedEventName,
                 college: formData.college === 'Other' ? otherCollege : formData.college,
-            };   
+            };
             if (imageFile) {
                 try {
                     const imageUrl = await uploadImage(imageFile);
                     // Update the formData with the uploaded imageUrl
                     updatedFormData = {
                         ...formData,
-                        imageUrl:imageUrl,
+                        imageUrl: imageUrl,
                         eventName: updatedEventName,
                         college: formData.college === 'Other' ? otherCollege : formData.college,
                     };
@@ -368,7 +368,7 @@ const FormTab = ({ updatedEventName }) => {
                                         onChange={handleInputChange}
                                         required
                                     >
-                                            <option value="">Select Branch</option>
+                                        <option value="">Select Branch</option>
                                         <option value="CSE">CSE</option>
                                         <option value="IT">IT</option>
                                         <option value="ET">ET</option>
@@ -497,14 +497,14 @@ const FormTab = ({ updatedEventName }) => {
                 onClose={handleCloseDialog}
             >
                 <DialogContent
-                style={{display:'flex', flexDirection:'column', alignItems:'center',}}
+                    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', }}
 
                 >
-                                       <Button
+                    <Button
                         variant="contained"
                         color="primary"
-                        onClick={() => handleDownloadQR(`/images/luckyqr.jpg`)}
-                        style={{ marginBottom: '1rem', marginTop:'1rem', border:'10x solid red' }}
+                        onClick={() => handleDownloadQR(`/images/eventsqr/eventqr.jpg`)}
+                        style={{ marginBottom: '1rem', marginTop: '1rem', border: '10x solid red' }}
                     >
                         Download QR Code
                     </Button>
@@ -513,7 +513,7 @@ const FormTab = ({ updatedEventName }) => {
                         <Image
                             width={805}
                             height={799}
-                            src={`/images/luckyqr.jpg`}
+                            src={`/images/eventsqr/eventqr.jpg`}
                             alt="QR Code"
                             style={{ width: '100%', height: 'auto' }}
                         />
