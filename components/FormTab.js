@@ -594,12 +594,7 @@ document.querySelector("#teamMem")?.remove()
             checked={radioSelection === 'with a girl'}
             onChange={handleRadioChange}
           /> With a girl
-          <input
-            type="radio"
-            value="without a girl"
-            checked={radioSelection === 'without a girl'}
-            onChange={handleRadioChange}
-          /> Without a girl
+          {/* <input type="radio" value="without a girl" checked={radioSelection === 'without a girl'} onChange={handleRadioChange}/> Without a girl */}
         </div>)}
        
 
