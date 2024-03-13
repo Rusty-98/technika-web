@@ -1052,8 +1052,11 @@ document.querySelector("#teamMem")?.remove()
                                     <button type='submit' className={styles.myButton}>
                                         Next
                                     </button>
+                                             {(radioSelection === 'without a girl') && (document.querySelector("button")) && (document.querySelector("button").disabled=true )}
+        {(radioSelection === 'with a girl') && (document.querySelector("button")) && (document.querySelector("button").disabled=false )}
                                 </div>
                             </div>
+                                            
                         </form>
 
 
