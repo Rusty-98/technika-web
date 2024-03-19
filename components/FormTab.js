@@ -1155,7 +1155,7 @@ document.querySelector("#teamMem")?.remove()
                     <Button
                         variant="contained"
                         color="primary"
-                        onClick={() => handleDownloadQR('/images/eventsqr/eventqr.jpg')}
+                        onClick={() => handleDownloadQR('/images/eventsqr/eventRegistrationfee.jpg')}
                         style={{ marginBottom: '1rem', marginTop: '1rem', border: '10x solid red' }}
                     >
                         Download QR Code

@@ -66,7 +66,7 @@ const itemDetails = {
     tshirtb: {
         item: 'tshirtb',
         heading: 'Tshirt Boy Print',
-        price: 499,
+        price: 435,
         MRP: 599,
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         image: '/images/merch/tshirt.JPG',
@@ -75,7 +75,7 @@ const itemDetails = {
     tshirtg: {
         item: 'tshirtg',
         heading: 'Tshirt Girl Print',
-        price: 499,
+        price: 435,
         MRP: 599,
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         image: '/images/merch/tshirt.JPG',

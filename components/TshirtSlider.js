@@ -7,13 +7,13 @@ const tshirts = [
   {
     itemName: 'tshirtb',
     imageSrc: '/images/merch/boy2.gif',
-    price: '₹499',
+    price: '₹435',
     variant: 'Boy Print'
   },
   {
     itemName: 'tshirtg',
     imageSrc: '/images/merch/girl2.gif',
-    price: '₹499',
+    price: '₹435',
     variant: 'Girl Print'
 
   },
