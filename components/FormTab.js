@@ -1165,7 +1165,7 @@ document.querySelector("#teamMem")?.remove()
                         <Image
                             width={805}
                             height={799}
-                            src={'/images/eventsqr/eventqr.jpg'}
+                            src={'/images/eventsqr/eventRegistrationfee.jpg'}
                             alt="QR Code"
                             style={{ width: '100%', height: 'auto' }}
                         />
