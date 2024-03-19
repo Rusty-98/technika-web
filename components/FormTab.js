@@ -15,7 +15,7 @@ import Image from 'next/image';
 
 
 const FormTab = ({ updatedEventName }) => {
-    const freeforall = true;
+    const freeforall = false;
     const [radioSelection, setRadioSelection] = useState('');
     const [tabIndex, setTabIndex] = useState(0);
     const handleRadioChange = (event) => {
