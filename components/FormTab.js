@@ -58,8 +58,11 @@ const FormTab = ({ updatedEventName }) => {
     const handleCloseDialog = () => {
         setOpenDialog(false);
     };
-    if(window.location.href.substring(window.location.href.lastIndexOf("/")+1)!="techathon"){
-document.querySelector("#teamMem")?.remove()
+//     if(window.location.href.substring(window.location.href.lastIndexOf("/")+1)!="techathon"){
+// document.querySelector("#teamMem")?.remove()
+//     }
+    if (!window.location.href.includes("techathon") && !window.location.href.includes("hackathon")) {
+        document.querySelector("#teamMem")?.remove();
     }
 
     const uploadImage = async (file) => {
