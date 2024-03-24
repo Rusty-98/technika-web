@@ -65,7 +65,8 @@
         padding-left: 2rem;
         padding-right: 2rem;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+        grid-template-columns: repeat(3, 1fr); /* ye line add kari hai if problem occur remove this and uncomment above one */
         gap: 20px;
         column-gap: 2rem;
         justify-content: space-between; /* Adjusted to space-between */
