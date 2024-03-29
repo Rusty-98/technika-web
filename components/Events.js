@@ -4,7 +4,7 @@ import EventDetails from './EventDetails';
 import EventCard from '@/components/EventCard';
 import Link from 'next/link';
 
-const Events = ({isHome}) => {
+const Events = ({ isHome }) => {
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [selectTab, setSelectTab] = useState("All");
@@ -62,7 +62,7 @@ const Events = ({isHome}) => {
 
   let filteredEvents = selectTab === "All" ? events : events.filter(event => event.category === selectTab);
 
-  if(isHome){
+  if (isHome) {
     filteredEvents = filteredEvents.slice(0, 5);
   }
 
@@ -112,7 +112,7 @@ const Events = ({isHome}) => {
               />
             </div>
           ))}
-          {isHome && <Link href={"/events"}>
+          {isHome && <Link href={"/events"} className={style.more}>
             <EventCard
               text={"See More..."}
               prize={"2000"}

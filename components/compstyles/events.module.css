@@ -140,6 +140,11 @@
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
 }
 
+.more{
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
 .wrapper {
     padding-top: 3rem;
     display: grid;
