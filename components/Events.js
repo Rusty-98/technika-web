@@ -6,6 +6,7 @@ import EventCard from '@/components/EventCard';
 const Events = () => {
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [selectTab, setSelectTab] = useState("All");
 
   useEffect(() => {
     // Fetch events data from your API
@@ -44,6 +45,23 @@ const Events = () => {
     setSelectedEvent(null);
   };
 
+  const handleTabClick = (event) => {
+    if (event.currentTarget.textContent === "All") {
+      setSelectTab("All");
+      return;
+    }
+    const value = event.currentTarget.textContent.slice(0, -1);
+    setSelectTab(value);
+  }
+
+  const handleDropdownChange = (event) => {
+    const value = event.target.value;
+    setSelectTab(value);
+  };
+
+  const filteredEvents = selectTab === "All" ? events : events.filter(event => event.category === selectTab);
+
+
   return (
     <div>
       {selectedEvent && (
@@ -61,8 +79,27 @@ const Events = () => {
       )}
       <div className={style.parentCard}>
         <p className={style.heading}>Events</p>
+        <div className={style.tabContainer}>
+          <div className={style.tab}>
+            <div className={selectTab === "All" ? style.select : style.tabChild} onClick={handleTabClick}>All</div>
+            <div className={selectTab === "Technical event" ? style.select : style.tabChild} onClick={handleTabClick}>Technical events</div>
+            <div className={selectTab === "Aeroclub event" ? style.select : style.tabChild} onClick={handleTabClick}>Aeroclub events</div>
+            <div className={selectTab === "Robotics event" ? style.select : style.tabChild} onClick={handleTabClick}>Robotics events</div>
+            <div className={selectTab === "Coding event" ? style.select : style.tabChild} onClick={handleTabClick}>Coding events</div>
+          </div>
+          <div className={style.list}>
+            <select name="event" id="event" className={style.listItem} value={selectTab} onChange={handleDropdownChange}>
+              <option value="All" className={style.listItem}>All</option>
+              <option value="Technical event" className={style.listItem}>Technical events</option>
+              <option value="Aeroclub event" className={style.listItem}>Aeroclub events</option>
+              <option value="Robotics event" className={style.listItem}>Robotics events</option>
+              <option value="Coding event" className={style.listItem}>Coding events</option>
+            </select>
+
+          </div>
+        </div>
         <div className={style.wrapper}>
-          {events.map((event) => (
+          {filteredEvents.map((event) => (
             <div onClick={() => handleEventClick(event)}>
               <EventCard
                 key={event._id}
