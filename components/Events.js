@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import style from './compstyles/events.module.css';
 import EventDetails from './EventDetails';
 import EventCard from '@/components/EventCard';
+import Link from 'next/link';
 
-const Events = () => {
+const Events = ({isHome}) => {
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [selectTab, setSelectTab] = useState("All");
@@ -59,8 +60,11 @@ const Events = () => {
     setSelectTab(value);
   };
 
-  const filteredEvents = selectTab === "All" ? events : events.filter(event => event.category === selectTab);
+  let filteredEvents = selectTab === "All" ? events : events.filter(event => event.category === selectTab);
 
+  if(isHome){
+    filteredEvents = filteredEvents.slice(0, 5);
+  }
 
   return (
     <div>
@@ -108,6 +112,12 @@ const Events = () => {
               />
             </div>
           ))}
+          {isHome && <Link href={"/events"}>
+            <EventCard
+              text={"See More..."}
+              prize={"2000"}
+            />
+          </Link>}
         </div>
       </div>
     </div>

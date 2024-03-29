@@ -192,8 +192,8 @@
     }
 
     .tabContainer {
-        height: 50px;
-        width: 80vw;
+        height: 40px;
+        width: 70vw;
     }
 
     .tab {
@@ -202,6 +202,10 @@
 
     .list{
         display: flex;
+    }
+
+    .listItem{
+        font-size: 1.2rem;
     }
     
     .tabChild {

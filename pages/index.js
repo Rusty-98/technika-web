@@ -80,7 +80,7 @@ export default function Home({ navbarLinkClicked }) {
           <MerchandiseSlider />
 
         {/* <CarouselTop /> */}
-        <Events />
+        <Events isHome={true} />
         {/* <CarouselTop /> */}
         <Team showThreeDepartments={true} />
         <Sponsors />
