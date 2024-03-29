@@ -84,7 +84,7 @@ const Events = () => {
             <div className={selectTab === "All" ? style.select : style.tabChild} onClick={handleTabClick}>All</div>
             <div className={selectTab === "Technical event" ? style.select : style.tabChild} onClick={handleTabClick}>Technical events</div>
             <div className={selectTab === "Aeroclub event" ? style.select : style.tabChild} onClick={handleTabClick}>Aeroclub events</div>
-            <div className={selectTab === "Robotics event" ? style.select : style.tabChild} onClick={handleTabClick}>Robotics events</div>
+            <div className={selectTab === "Autorob event" ? style.select : style.tabChild} onClick={handleTabClick}>Autorob events</div>
             <div className={selectTab === "Coding event" ? style.select : style.tabChild} onClick={handleTabClick}>Coding events</div>
           </div>
           <div className={style.list}>
@@ -92,7 +92,7 @@ const Events = () => {
               <option value="All" className={style.listItem}>All</option>
               <option value="Technical event" className={style.listItem}>Technical events</option>
               <option value="Aeroclub event" className={style.listItem}>Aeroclub events</option>
-              <option value="Robotics event" className={style.listItem}>Robotics events</option>
+              <option value="Autorob event" className={style.listItem}>Autorob events</option>
               <option value="Coding event" className={style.listItem}>Coding events</option>
             </select>
 
