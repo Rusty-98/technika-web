@@ -91,7 +91,7 @@ const Sidebar = ({onNavbarLinkClick}) => {
         <Menu text={'about us'} hide={!open} href="/about" onNavbarLinkClick={onNavbarLinkClick}/>
         <Menu text={'events'} hide={!open} href="/events" onNavbarLinkClick={onNavbarLinkClick}/>
         <Menu text={'sponsors'} hide={!open} href="/#sponsors" onNavbarLinkClick={onNavbarLinkClick}/>
-        <Menu text={'merchandises'} hide={!open} href="/merchandise" onNavbarLinkClick={onNavbarLinkClick}/>
+        {/* <Menu text={'merchandises'} hide={!open} href="/merchandise" onNavbarLinkClick={onNavbarLinkClick}/> */}
         <Menu text={'admin'} hide={!open} href="/admin/dashboard" onNavbarLinkClick={onNavbarLinkClick}/>
       </div>
     </div>
