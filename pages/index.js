@@ -71,13 +71,13 @@ export default function Home({ navbarLinkClicked }) {
           <CarouselTop />
         </div>
 
-        <div style={{ marginTop: '5rem' }}>
+        {/* <div style={{ marginTop: '5rem' }}>
           <Tshirtmodel />
 
-        </div>
+        </div> */}
         {/* <Merch /> */}
           {/* <CarouselTop /> */}
-          <MerchandiseSlider />
+          {/* <MerchandiseSlider /> */}
 
         {/* <CarouselTop /> */}
         <Events isHome={true} />
