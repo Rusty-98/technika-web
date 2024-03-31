@@ -36,7 +36,7 @@ const data = [
 const Merch = () => {
     return (
         <>
-            <TshirtSlider />
+            {/* <TshirtSlider /> */}
             <div className={styles.main2}>
                 {
                     data.map((item, index) => (
