@@ -161,4 +161,19 @@ const EventImg = [
   {
     "Robo Wrestling": "/events/test.webp"
   },
+  {
+    "Quiz Me More": "/events/quiz.webp"
+  },
+  {
+    "Programing date": "/events/progDate.webp"
+  },
+  {
+    "Flip-o-Friend": "/events/flip.webp"
+  },
+  {
+    "Blind Date": "/events/bd.webp"
+  },
+  {
+    "Run Time Error": "/events/runtime.webp"
+  },
 ]
