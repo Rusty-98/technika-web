@@ -109,6 +109,7 @@ const Events = ({ isHome }) => {
                 key={event._id}
                 text={event.name}
                 prize={"2000"}
+                img={EventImg.find(img => img[event.name]) ? EventImg.find(img => img[event.name])[event.name] : ""}
               />
             </div>
           ))}
@@ -125,3 +126,39 @@ const Events = ({ isHome }) => {
 };
 
 export default Events;
+
+const EventImg = [
+  {
+    "Robot Soccer": "/events/roboSoccer.webp"
+  },
+  {
+    "Water Rocket": "/events/water.webp"
+  },
+  {
+    "Aircraft Simulation": "/events/airSim.webp"
+  },
+  {
+    "Water Rocket": "/events/test.webp"
+  },
+  {
+    "Robo Race": "/events/race.webp"
+  },
+  {
+    "Junkyard": "/events/junk.webp"
+  },
+  {
+    "Hackathon": "/events/hackathon.webp"
+  },
+  {
+    "Junkyard": "/events/junk.webp"
+  },
+  {
+    "Robo Wrestling": "/events/test.jpg"
+  },
+  {
+    "Escape Room": "/events/escape.webp"
+  },
+  {
+    "Robo Wrestling": "/events/test.webp"
+  },
+]
