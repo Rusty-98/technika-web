@@ -25,6 +25,7 @@ const EventDetails = ({ display, name, category, date, timeFrom, timeTo, venue, 
             maxWidth="lg"
             onClose={handleClose}
             fullScreen={false}
+            sx={{padding:'4rem'}}
             PaperComponent={({ children }) => (
                 <Paper
                     sx={{
@@ -42,7 +43,10 @@ const EventDetails = ({ display, name, category, date, timeFrom, timeTo, venue, 
             <div style={{ position: 'absolute', top: '1rem', left: '1rem', color: 'rgba(255, 0, 214, 0.74)', cursor: 'pointer', zIndex: '99999' }} onClick={handleClose} >
                 <Cancel fontSize='large' />
             </div>
-            <DialogContent>
+            <DialogContent
+            sx={{width:'100%'}}
+            className={styles.dc}
+            >
                 <h1 className={styles.name}>{capitalizedName}</h1>
                 <div className={styles.dialogContent}>
                     <div className={styles.tvflex}>

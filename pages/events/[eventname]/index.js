@@ -4,12 +4,13 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import styles from '@/components/compstyles/part1.module.css';
 import CircleIcon from '@mui/icons-material/Circle';
+import { Button } from '@mui/material';
 
 const EventDetailsPage = () => {
   const router = useRouter();
   const { eventname } = router.query;
   const [eventDetails, setEventDetails] = useState(null);
-
+  const linkPath = `/form/${encodeURIComponent(eventname.toLowerCase().replace(/\s+/g, '-'))}`;
   useEffect(() => {
     const fetchEventDetails = async () => {
       try {
@@ -47,13 +48,16 @@ const EventDetailsPage = () => {
             <div>
               {eventDetails && eventDetails.guidelines.map((guideline, index) => (
                 <ul key={index}>
-                  <li style={{ listStyleType: 'none', display: 'flex', alignItems: 'flex-start', textAlign: 'left', marginRight: '1rem', color:'rgba(255, 255, 255, 0.8)' }} className={styles.guidelines}>
+                  <li style={{ listStyleType: 'none', display: 'flex', alignItems: 'flex-start', textAlign: 'left', marginRight: '1rem', color: 'rgba(255, 255, 255, 0.8)' }} className={styles.guidelines}>
                     <CircleIcon className={styles.guidelineDisk} /> {guideline}
                   </li>
                 </ul>
               ))}
             </div>
           </div>
+          <button onClick={router.push(linkPath)} type='submit' className={styles.myButton}>
+            Register Now
+          </button>
         </div>
       </div>
     </>

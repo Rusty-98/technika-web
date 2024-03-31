@@ -1,6 +1,6 @@
 import connectToMongo from '@/middleware/middleware';
 import MerchandiseForm from '@/models/MerchandiseForm';
-import nodemailer from 'nodemailer';
+// import nodemailer from 'nodemailer';
 import CouponCode from '@/models/CouponCode';
 
 const handler = async (req, res) => {
@@ -10,16 +10,6 @@ const handler = async (req, res) => {
         // Save form data to MongoDB
         await MerchandiseForm.create(updatedFormData);
 
-        // Send confirmation email
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                // user: process.env.MAIL_USER,
-                // pass: process.env.MAIL_PASS,
-                user: "technicalsubcouncil@hbtu.ac.in",
-                pass: "yjfpgeifuqtzsvia",
-            },
-        });
         if (updatedFormData.couponCode) {
             // Find the coupon in MongoDB based on the coupon code
             const coupon = await CouponCode.findOne({ coupon_code: updatedFormData.couponCode });
@@ -33,16 +23,26 @@ const handler = async (req, res) => {
             }
         }
         
+        
+        // Send confirmation email
+        // const transporter = nodemailer.createTransport({
+        //     service: 'gmail',
+        //     auth: {
+        //         // user: process.env.MAIL_USER,
+        //         // pass: process.env.MAIL_PASS,
+        //         user: "technicalsubcouncil@hbtu.ac.in",
+        //         pass: "yjfpgeifuqtzsvia",
+        //     },
+        // });
+        // const mailOptions = {
+        //     // from: process.env.MAIL_USER,
+        //     from: "technicalsubcouncil@hbtu.ac.in",
+        //     to: updatedFormData.email, 
+        //     subject: 'Confirmation of Purchase for TECHNIKA Merchandise',
+        //     text: `We are delighted to inform you that your recent purchase of merchandise from the Technical Sub-Council has been successfully registered. Thank you for choosing our products. We truly appreciate your support and are committed to providing you with high-quality products.\n\nWe will verify your payment and reach out to you within 48 hours to deliver your merchandise to you. ✨✨\n\nBest regards,\nTechnical Sub-Council\nHBTU, Kanpur`,
+        // };
 
-        const mailOptions = {
-            // from: process.env.MAIL_USER,
-            from: "technicalsubcouncil@hbtu.ac.in",
-            to: updatedFormData.email, 
-            subject: 'Confirmation of Purchase for TECHNIKA Merchandise',
-            text: `We are delighted to inform you that your recent purchase of merchandise from the Technical Sub-Council has been successfully registered. Thank you for choosing our products. We truly appreciate your support and are committed to providing you with high-quality products.\n\nWe will verify your payment and reach out to you within 48 hours to deliver your merchandise to you. ✨✨\n\nBest regards,\nTechnical Sub-Council\nHBTU, Kanpur`,
-        };
-
-        await transporter.sendMail(mailOptions);
+        // await transporter.sendMail(mailOptions);
 
         res.status(200).json({ success: true, message: 'Ordered successfully' });
     } catch (error) {

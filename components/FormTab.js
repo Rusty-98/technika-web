@@ -11,16 +11,18 @@ import { saveAs } from 'file-saver';
 
 import { Dialog, DialogContent } from '@mui/material';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 
 
 const FormTab = ({ updatedEventName }) => {
+    const router = useRouter()
     const freeforall = false;
     const [radioSelection, setRadioSelection] = useState('');
     const [tabIndex, setTabIndex] = useState(0);
     const handleRadioChange = (event) => {
         setRadioSelection(event.target.value);
-      };
+    };
     const [formData, setFormData] = useState({
         college: '',
         fullname: '',
@@ -30,20 +32,20 @@ const FormTab = ({ updatedEventName }) => {
         year: '1st',
         gender: 'male',
         imageUrl: '',
-        teamMem:'',
-        phone_team1:"",
-        phone_team2:"",
-        phone_team3:"",
-        phone_team4:"",
-        name_team1:"",
-        name_team2:"",
-        name_team3:"",
-        phone_team4:"",
-        branch_team1:'',
-        branch_team2:'',
-        branch_team3:'',
-        branch_team4:'',
-        team_name:""
+        teamMem: '',
+        phone_team1: "",
+        phone_team2: "",
+        phone_team3: "",
+        phone_team4: "",
+        name_team1: "",
+        name_team2: "",
+        name_team3: "",
+        phone_team4: "",
+        branch_team1: '',
+        branch_team2: '',
+        branch_team3: '',
+        branch_team4: '',
+        team_name: ""
     });
     const [imageFile, setImageFile] = useState(null);
     const [openDialog, setOpenDialog] = useState(false);
@@ -58,9 +60,9 @@ const FormTab = ({ updatedEventName }) => {
     const handleCloseDialog = () => {
         setOpenDialog(false);
     };
-//     if(window.location.href.substring(window.location.href.lastIndexOf("/")+1)!="techathon"){
-// document.querySelector("#teamMem")?.remove()
-//     }
+    //     if(window.location.href.substring(window.location.href.lastIndexOf("/")+1)!="techathon"){
+    // document.querySelector("#teamMem")?.remove()
+    //     }
     if (!window.location.href.includes("techathon") && !window.location.href.includes("hackathon")) {
         document.querySelector("#teamMem")?.remove();
     }
@@ -217,20 +219,20 @@ const FormTab = ({ updatedEventName }) => {
                     phone: '',
                     year: '1st',
                     gender: 'male',
-                    teamMem:'',
-                    phone_team1:"",
-                    phone_team2:"",
-                    phone_team3:"",
-                    phone_team4:"",
-                    name_team1:"",
-                    name_team2:"",
-                    name_team3:"",
-                    phone_team4:"",
-                    branch_team1:'',
-                    branch_team2:'',
-                    branch_team3:'',
-                    branch_team4:'',
-                    team_name:''
+                    teamMem: '',
+                    phone_team1: "",
+                    phone_team2: "",
+                    phone_team3: "",
+                    phone_team4: "",
+                    name_team1: "",
+                    name_team2: "",
+                    name_team3: "",
+                    phone_team4: "",
+                    branch_team1: '',
+                    branch_team2: '',
+                    branch_team3: '',
+                    branch_team4: '',
+                    team_name: ''
                 });
                 setImageFile(null)
                 setSeverity('success')
@@ -434,7 +436,7 @@ const FormTab = ({ updatedEventName }) => {
                                     </select>
                                 </div>
 
-                             
+
                                 <div id="teamMem" className={styles.inpDiv}>
                                     <label htmlFor="TeamMember">Team Member</label>
                                     <select
@@ -449,600 +451,600 @@ const FormTab = ({ updatedEventName }) => {
                                         <option value="2">2</option>
                                         <option value="3" >3</option>
                                         <option value="4">4</option>
-                 
+
                                     </select>
-                                    {(formData.teamMem=='2') && (
-        <div>
+                                    {(formData.teamMem == '2') && (
+                                        <div>
 
 
-            <br/>
-            <label style={{fontSize:"1.2rem",margin:"10px"}}> First Member:<br/></label>
-<br/>
+                                            <br />
+                                            <label style={{ fontSize: "1.2rem", margin: "10px" }}> First Member:<br /></label>
+                                            <br />
 
 
-              <label htmlFor="fullname">Name</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="name_team1"
-                                        id="name_team1"
-                                        value={formData.name_team1}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-   <label htmlFor="phone">Phone</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="phone_team1"
-                                        id="phone_team1"
-                                        value={formData.phone_team1}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-       <div className={styles.inpDiv}>
-                                    <label htmlFor="branch">Branch</label>
-                                    <select
-                                        className={styles.inputBox}
-                                        name="branch_team1"
-                                        id="branch_team1"
-                                        value={formData.branch_team1}
-                                        onChange={handleInputChange}
-                                        required
-                                    >
-                                        <option value="">Select Branch</option>
-                                        <option value="CSE">CSE</option>
-                                        <option value="IT">IT</option>
-                                        <option value="ET">ET</option>
-                                        <option value="EE">EE</option>
-                                        <option value="ME">ME</option>
-                                        <option value="CE">CE</option>
-                                        <option value="CHE">CHE</option>
-                                        <option value="PT">PT</option>
-                                        <option value="PL">PL</option>
-                                        <option value="FT">FT</option>
-                                        <option value="OT">OT</option>
-                                        <option value="BE">BE</option>
-                                        <option value="LT">LT</option>
-                                        <option value="BBA">BBA</option>
-                                        <option value="BCA">BCA</option>
-                                        <option value="MBA">MBA</option>
-                                        <option value="MCA">MCA</option>
-                                        <option value="M.tech">M.tech</option>
-                                        <option value="M.sc">M.sc</option>
-                                        <option value="PhD">PhD</option>
-                                        <option value="BSMS">BSMS</option>
-                                        <option value="OTHER">Other</option>
-                                    </select>
-                                </div>
+                                            <label htmlFor="fullname">Name</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="name_team1"
+                                                id="name_team1"
+                                                value={formData.name_team1}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <label htmlFor="phone">Phone</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="phone_team1"
+                                                id="phone_team1"
+                                                value={formData.phone_team1}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <div className={styles.inpDiv}>
+                                                <label htmlFor="branch">Branch</label>
+                                                <select
+                                                    className={styles.inputBox}
+                                                    name="branch_team1"
+                                                    id="branch_team1"
+                                                    value={formData.branch_team1}
+                                                    onChange={handleInputChange}
+                                                    required
+                                                >
+                                                    <option value="">Select Branch</option>
+                                                    <option value="CSE">CSE</option>
+                                                    <option value="IT">IT</option>
+                                                    <option value="ET">ET</option>
+                                                    <option value="EE">EE</option>
+                                                    <option value="ME">ME</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="CHE">CHE</option>
+                                                    <option value="PT">PT</option>
+                                                    <option value="PL">PL</option>
+                                                    <option value="FT">FT</option>
+                                                    <option value="OT">OT</option>
+                                                    <option value="BE">BE</option>
+                                                    <option value="LT">LT</option>
+                                                    <option value="BBA">BBA</option>
+                                                    <option value="BCA">BCA</option>
+                                                    <option value="MBA">MBA</option>
+                                                    <option value="MCA">MCA</option>
+                                                    <option value="M.tech">M.tech</option>
+                                                    <option value="M.sc">M.sc</option>
+                                                    <option value="PhD">PhD</option>
+                                                    <option value="BSMS">BSMS</option>
+                                                    <option value="OTHER">Other</option>
+                                                </select>
+                                            </div>
 
-                                <br/>
-            <label style={{fontSize:"1.2rem",margin:"10px"}}> Second Member:<br/></label>
-<br/>
+                                            <br />
+                                            <label style={{ fontSize: "1.2rem", margin: "10px" }}> Second Member:<br /></label>
+                                            <br />
 
-                                <label htmlFor="phone">Name</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="name_team2"
-                                        id="name_team2"
-                                        value={formData.name_team2}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-                                <label htmlFor="fullname">Phone</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="phone_team2"
-                                        id="phone_team2"
-                                        value={formData.phone_team2}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-       <div className={styles.inpDiv}>
-                                    <label htmlFor="branch">Branch</label>
-                                    <select
-                                        className={styles.inputBox}
-                                        name="branch_team2"
-                                        id="branch_team2"
-                                        value={formData.branch_team2}
-                                        onChange={handleInputChange}
-                                        required
-                                    >
-                                        <option value="">Select Branch</option>
-                                        <option value="CSE">CSE</option>
-                                        <option value="IT">IT</option>
-                                        <option value="ET">ET</option>
-                                        <option value="EE">EE</option>
-                                        <option value="ME">ME</option>
-                                        <option value="CE">CE</option>
-                                        <option value="CHE">CHE</option>
-                                        <option value="PT">PT</option>
-                                        <option value="PL">PL</option>
-                                        <option value="FT">FT</option>
-                                        <option value="OT">OT</option>
-                                        <option value="BE">BE</option>
-                                        <option value="LT">LT</option>
-                                        <option value="BBA">BBA</option>
-                                        <option value="BCA">BCA</option>
-                                        <option value="MBA">MBA</option>
-                                        <option value="MCA">MCA</option>
-                                        <option value="M.tech">M.tech</option>
-                                        <option value="M.sc">M.sc</option>
-                                        <option value="PhD">PhD</option>
-                                        <option value="BSMS">BSMS</option>
-                                        <option value="OTHER">Other</option>
-                                    </select>
-                                </div>
-                                <br>
-                                </br>
-                                <label htmlFor="fullname">Team Name</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="team_name"
-                                        id="team_name"
-                                        value={formData.team_name}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-        </div>)}
+                                            <label htmlFor="phone">Name</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="name_team2"
+                                                id="name_team2"
+                                                value={formData.name_team2}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <label htmlFor="fullname">Phone</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="phone_team2"
+                                                id="phone_team2"
+                                                value={formData.phone_team2}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <div className={styles.inpDiv}>
+                                                <label htmlFor="branch">Branch</label>
+                                                <select
+                                                    className={styles.inputBox}
+                                                    name="branch_team2"
+                                                    id="branch_team2"
+                                                    value={formData.branch_team2}
+                                                    onChange={handleInputChange}
+                                                    required
+                                                >
+                                                    <option value="">Select Branch</option>
+                                                    <option value="CSE">CSE</option>
+                                                    <option value="IT">IT</option>
+                                                    <option value="ET">ET</option>
+                                                    <option value="EE">EE</option>
+                                                    <option value="ME">ME</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="CHE">CHE</option>
+                                                    <option value="PT">PT</option>
+                                                    <option value="PL">PL</option>
+                                                    <option value="FT">FT</option>
+                                                    <option value="OT">OT</option>
+                                                    <option value="BE">BE</option>
+                                                    <option value="LT">LT</option>
+                                                    <option value="BBA">BBA</option>
+                                                    <option value="BCA">BCA</option>
+                                                    <option value="MBA">MBA</option>
+                                                    <option value="MCA">MCA</option>
+                                                    <option value="M.tech">M.tech</option>
+                                                    <option value="M.sc">M.sc</option>
+                                                    <option value="PhD">PhD</option>
+                                                    <option value="BSMS">BSMS</option>
+                                                    <option value="OTHER">Other</option>
+                                                </select>
+                                            </div>
+                                            <br>
+                                            </br>
+                                            <label htmlFor="fullname">Team Name</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="team_name"
+                                                id="team_name"
+                                                value={formData.team_name}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                        </div>)}
 
                                     {(formData.teamMem == '3' || formData.teamMem == '4') && (
-        <div>
-          <input
-            type="radio"
-            value="with a girl"
-            checked={radioSelection === 'with a girl'}
-            onChange={handleRadioChange}
-          /> With a girl
-          {/* <input type="radio" value="without a girl" checked={radioSelection === 'without a girl'} onChange={handleRadioChange}/> Without a girl */}
-        </div>)}
-       
+                                        <div>
+                                            <input
+                                                type="radio"
+                                                value="with a girl"
+                                                checked={radioSelection === 'with a girl'}
+                                                onChange={handleRadioChange}
+                                            /> With a girl
+                                            {/* <input type="radio" value="without a girl" checked={radioSelection === 'without a girl'} onChange={handleRadioChange}/> Without a girl */}
+                                        </div>)}
 
 
-        {(radioSelection === 'with a girl' && formData.teamMem=='3') && (
-        
-        <div>
 
-<br/>
-            <label style={{fontSize:"1.2rem",margin:"10px"}}> First Member:<br/></label>
-<br/>
-              <label htmlFor="fullname">Name</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="name_team1"
-                                        id="name_team1"
-                                        value={formData.name_team1}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-   <label htmlFor="phone">Phone</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="phone_team1"
-                                        id="phone_team1"
-                                        value={formData.phone_team1}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-       <div className={styles.inpDiv}>
-                                    <label htmlFor="branch">Branch</label>
-                                    <select
-                                        className={styles.inputBox}
-                                        name="branch_team1"
-                                        id="branch_team1"
-                                        value={formData.branch_team1}
-                                        onChange={handleInputChange}
-                                        required
-                                    >
-                                        <option value="">Select Branch</option>
-                                        <option value="CSE">CSE</option>
-                                        <option value="IT">IT</option>
-                                        <option value="ET">ET</option>
-                                        <option value="EE">EE</option>
-                                        <option value="ME">ME</option>
-                                        <option value="CE">CE</option>
-                                        <option value="CHE">CHE</option>
-                                        <option value="PT">PT</option>
-                                        <option value="PL">PL</option>
-                                        <option value="FT">FT</option>
-                                        <option value="OT">OT</option>
-                                        <option value="BE">BE</option>
-                                        <option value="LT">LT</option>
-                                        <option value="BBA">BBA</option>
-                                        <option value="BCA">BCA</option>
-                                        <option value="MBA">MBA</option>
-                                        <option value="MCA">MCA</option>
-                                        <option value="M.tech">M.tech</option>
-                                        <option value="M.sc">M.sc</option>
-                                        <option value="PhD">PhD</option>
-                                        <option value="BSMS">BSMS</option>
-                                        <option value="OTHER">Other</option>
-                                    </select>
-                                </div>
-                                <br/>
-            <label style={{fontSize:"1.2rem",margin:"10px"}}> Second Member:<br/></label>
-<br/>
-                                <label htmlFor="phone">Name</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="name_team2"
-                                        id="name_team2"
-                                        value={formData.name_team2}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-                                <label htmlFor="fullname">Phone</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="phone_team2"
-                                        id="phone_team2"
-                                        value={formData.phone_team2}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-       <div className={styles.inpDiv}>
-                                    <label htmlFor="branch">Branch</label>
-                                    <select
-                                        className={styles.inputBox}
-                                        name="branch_team2"
-                                        id="branch_team2"
-                                        value={formData.branch_team2}
-                                        onChange={handleInputChange}
-                                        required
-                                    >
-                                        <option value="">Select Branch</option>
-                                        <option value="CSE">CSE</option>
-                                        <option value="IT">IT</option>
-                                        <option value="ET">ET</option>
-                                        <option value="EE">EE</option>
-                                        <option value="ME">ME</option>
-                                        <option value="CE">CE</option>
-                                        <option value="CHE">CHE</option>
-                                        <option value="PT">PT</option>
-                                        <option value="PL">PL</option>
-                                        <option value="FT">FT</option>
-                                        <option value="OT">OT</option>
-                                        <option value="BE">BE</option>
-                                        <option value="LT">LT</option>
-                                        <option value="BBA">BBA</option>
-                                        <option value="BCA">BCA</option>
-                                        <option value="MBA">MBA</option>
-                                        <option value="MCA">MCA</option>
-                                        <option value="M.tech">M.tech</option>
-                                        <option value="M.sc">M.sc</option>
-                                        <option value="PhD">PhD</option>
-                                        <option value="BSMS">BSMS</option>
-                                        <option value="OTHER">Other</option>
-                                    </select>
-                                </div>
+                                    {(radioSelection === 'with a girl' && formData.teamMem == '3') && (
 
-                                <br/>
-            <label style={{fontSize:"1.2rem",margin:"10px"}}> Third Member:<br/></label>
-<br/>
-                                <label htmlFor="fullname">Name</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="name_team3"
-                                        id="name_team3"
-                                        value={formData.name_team3}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-                                <label htmlFor="phone">Phone</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="phone_team3"
-                                        id="phone_team3"
-                                        value={formData.phone_team3}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-       <div className={styles.inpDiv}>
-                                    <label htmlFor="branch">Branch</label>
-                                    <select
-                                        className={styles.inputBox}
-                                        name="branch_team3"
-                                        id="branch_team3"
-                                        value={formData.branch_team3}
-                                        onChange={handleInputChange}
-                                        required
-                                    >
-                                        <option value="">Select Branch</option>
-                                        <option value="CSE">CSE</option>
-                                        <option value="IT">IT</option>
-                                        <option value="ET">ET</option>
-                                        <option value="EE">EE</option>
-                                        <option value="ME">ME</option>
-                                        <option value="CE">CE</option>
-                                        <option value="CHE">CHE</option>
-                                        <option value="PT">PT</option>
-                                        <option value="PL">PL</option>
-                                        <option value="FT">FT</option>
-                                        <option value="OT">OT</option>
-                                        <option value="BE">BE</option>
-                                        <option value="LT">LT</option>
-                                        <option value="BBA">BBA</option>
-                                        <option value="BCA">BCA</option>
-                                        <option value="MBA">MBA</option>
-                                        <option value="MCA">MCA</option>
-                                        <option value="M.tech">M.tech</option>
-                                        <option value="M.sc">M.sc</option>
-                                        <option value="PhD">PhD</option>
-                                        <option value="BSMS">BSMS</option>
-                                        <option value="OTHER">Other</option>
-                                    </select>
-                                </div>
-                                <br></br>
-                                <label htmlFor="fullname">Team Name</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="team_name"
-                                        id="team_name"
-                                        value={formData.team_name}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
+                                        <div>
+
+                                            <br />
+                                            <label style={{ fontSize: "1.2rem", margin: "10px" }}> First Member:<br /></label>
+                                            <br />
+                                            <label htmlFor="fullname">Name</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="name_team1"
+                                                id="name_team1"
+                                                value={formData.name_team1}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <label htmlFor="phone">Phone</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="phone_team1"
+                                                id="phone_team1"
+                                                value={formData.phone_team1}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <div className={styles.inpDiv}>
+                                                <label htmlFor="branch">Branch</label>
+                                                <select
+                                                    className={styles.inputBox}
+                                                    name="branch_team1"
+                                                    id="branch_team1"
+                                                    value={formData.branch_team1}
+                                                    onChange={handleInputChange}
+                                                    required
+                                                >
+                                                    <option value="">Select Branch</option>
+                                                    <option value="CSE">CSE</option>
+                                                    <option value="IT">IT</option>
+                                                    <option value="ET">ET</option>
+                                                    <option value="EE">EE</option>
+                                                    <option value="ME">ME</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="CHE">CHE</option>
+                                                    <option value="PT">PT</option>
+                                                    <option value="PL">PL</option>
+                                                    <option value="FT">FT</option>
+                                                    <option value="OT">OT</option>
+                                                    <option value="BE">BE</option>
+                                                    <option value="LT">LT</option>
+                                                    <option value="BBA">BBA</option>
+                                                    <option value="BCA">BCA</option>
+                                                    <option value="MBA">MBA</option>
+                                                    <option value="MCA">MCA</option>
+                                                    <option value="M.tech">M.tech</option>
+                                                    <option value="M.sc">M.sc</option>
+                                                    <option value="PhD">PhD</option>
+                                                    <option value="BSMS">BSMS</option>
+                                                    <option value="OTHER">Other</option>
+                                                </select>
+                                            </div>
+                                            <br />
+                                            <label style={{ fontSize: "1.2rem", margin: "10px" }}> Second Member:<br /></label>
+                                            <br />
+                                            <label htmlFor="phone">Name</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="name_team2"
+                                                id="name_team2"
+                                                value={formData.name_team2}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <label htmlFor="fullname">Phone</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="phone_team2"
+                                                id="phone_team2"
+                                                value={formData.phone_team2}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <div className={styles.inpDiv}>
+                                                <label htmlFor="branch">Branch</label>
+                                                <select
+                                                    className={styles.inputBox}
+                                                    name="branch_team2"
+                                                    id="branch_team2"
+                                                    value={formData.branch_team2}
+                                                    onChange={handleInputChange}
+                                                    required
+                                                >
+                                                    <option value="">Select Branch</option>
+                                                    <option value="CSE">CSE</option>
+                                                    <option value="IT">IT</option>
+                                                    <option value="ET">ET</option>
+                                                    <option value="EE">EE</option>
+                                                    <option value="ME">ME</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="CHE">CHE</option>
+                                                    <option value="PT">PT</option>
+                                                    <option value="PL">PL</option>
+                                                    <option value="FT">FT</option>
+                                                    <option value="OT">OT</option>
+                                                    <option value="BE">BE</option>
+                                                    <option value="LT">LT</option>
+                                                    <option value="BBA">BBA</option>
+                                                    <option value="BCA">BCA</option>
+                                                    <option value="MBA">MBA</option>
+                                                    <option value="MCA">MCA</option>
+                                                    <option value="M.tech">M.tech</option>
+                                                    <option value="M.sc">M.sc</option>
+                                                    <option value="PhD">PhD</option>
+                                                    <option value="BSMS">BSMS</option>
+                                                    <option value="OTHER">Other</option>
+                                                </select>
+                                            </div>
+
+                                            <br />
+                                            <label style={{ fontSize: "1.2rem", margin: "10px" }}> Third Member:<br /></label>
+                                            <br />
+                                            <label htmlFor="fullname">Name</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="name_team3"
+                                                id="name_team3"
+                                                value={formData.name_team3}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <label htmlFor="phone">Phone</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="phone_team3"
+                                                id="phone_team3"
+                                                value={formData.phone_team3}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <div className={styles.inpDiv}>
+                                                <label htmlFor="branch">Branch</label>
+                                                <select
+                                                    className={styles.inputBox}
+                                                    name="branch_team3"
+                                                    id="branch_team3"
+                                                    value={formData.branch_team3}
+                                                    onChange={handleInputChange}
+                                                    required
+                                                >
+                                                    <option value="">Select Branch</option>
+                                                    <option value="CSE">CSE</option>
+                                                    <option value="IT">IT</option>
+                                                    <option value="ET">ET</option>
+                                                    <option value="EE">EE</option>
+                                                    <option value="ME">ME</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="CHE">CHE</option>
+                                                    <option value="PT">PT</option>
+                                                    <option value="PL">PL</option>
+                                                    <option value="FT">FT</option>
+                                                    <option value="OT">OT</option>
+                                                    <option value="BE">BE</option>
+                                                    <option value="LT">LT</option>
+                                                    <option value="BBA">BBA</option>
+                                                    <option value="BCA">BCA</option>
+                                                    <option value="MBA">MBA</option>
+                                                    <option value="MCA">MCA</option>
+                                                    <option value="M.tech">M.tech</option>
+                                                    <option value="M.sc">M.sc</option>
+                                                    <option value="PhD">PhD</option>
+                                                    <option value="BSMS">BSMS</option>
+                                                    <option value="OTHER">Other</option>
+                                                </select>
+                                            </div>
+                                            <br></br>
+                                            <label htmlFor="fullname">Team Name</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="team_name"
+                                                id="team_name"
+                                                value={formData.team_name}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
 
 
-        </div>)}
-        {(radioSelection === 'with a girl' && formData.teamMem=='4') && (
-        <div>
-            <br/>
-            <label style={{fontSize:"1.2rem",margin:"10px"}}> First Member:<br/></label>
-<br/>
-              <label htmlFor="fullname">Name</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="name_team1"
-                                        id="name_team1"
-                                        value={formData.name_team1}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-   <label htmlFor="phone">Phone</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="phone_team1"
-                                        id="phone_team1"
-                                        value={formData.phone_team1}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-       <div className={styles.inpDiv}>
-                                    <label htmlFor="branch">Branch</label>
-                                    <select
-                                        className={styles.inputBox}
-                                        name="branch_team1"
-                                        id="branch_team1"
-                                        value={formData.branch_team1}
-                                        onChange={handleInputChange}
-                                        required
-                                    >
-                                        <option value="">Select Branch</option>
-                                        <option value="CSE">CSE</option>
-                                        <option value="IT">IT</option>
-                                        <option value="ET">ET</option>
-                                        <option value="EE">EE</option>
-                                        <option value="ME">ME</option>
-                                        <option value="CE">CE</option>
-                                        <option value="CHE">CHE</option>
-                                        <option value="PT">PT</option>
-                                        <option value="PL">PL</option>
-                                        <option value="FT">FT</option>
-                                        <option value="OT">OT</option>
-                                        <option value="BE">BE</option>
-                                        <option value="LT">LT</option>
-                                        <option value="BBA">BBA</option>
-                                        <option value="BCA">BCA</option>
-                                        <option value="MBA">MBA</option>
-                                        <option value="MCA">MCA</option>
-                                        <option value="M.tech">M.tech</option>
-                                        <option value="M.sc">M.sc</option>
-                                        <option value="PhD">PhD</option>
-                                        <option value="BSMS">BSMS</option>
-                                        <option value="OTHER">Other</option>
-                                    </select>
-                                </div>
-                                <br/>
-            <label style={{fontSize:"1.2rem",margin:"10px"}}> Second Member:<br/></label>
-<br/>
-                                <label htmlFor="fullname">Name</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="name_team2"
-                                        id="name_team2"
-                                        value={formData.name_team2}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-                                <label htmlFor="phone">Phone</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="phone_team2"
-                                        id="phone_team2"
-                                        value={formData.phone_team2}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-       <div className={styles.inpDiv}>
-                                    <label htmlFor="branch">Branch</label>
-                                    <select
-                                        className={styles.inputBox}
-                                        name="branch_team2"
-                                        id="branch_team2"
-                                        value={formData.branch_team2}
-                                        onChange={handleInputChange}
-                                        required
-                                    >
-                                        <option value="">Select Branch</option>
-                                        <option value="CSE">CSE</option>
-                                        <option value="IT">IT</option>
-                                        <option value="ET">ET</option>
-                                        <option value="EE">EE</option>
-                                        <option value="ME">ME</option>
-                                        <option value="CE">CE</option>
-                                        <option value="CHE">CHE</option>
-                                        <option value="PT">PT</option>
-                                        <option value="PL">PL</option>
-                                        <option value="FT">FT</option>
-                                        <option value="OT">OT</option>
-                                        <option value="BE">BE</option>
-                                        <option value="LT">LT</option>
-                                        <option value="BBA">BBA</option>
-                                        <option value="BCA">BCA</option>
-                                        <option value="MBA">MBA</option>
-                                        <option value="MCA">MCA</option>
-                                        <option value="M.tech">M.tech</option>
-                                        <option value="M.sc">M.sc</option>
-                                        <option value="PhD">PhD</option>
-                                        <option value="BSMS">BSMS</option>
-                                        <option value="OTHER">Other</option>
-                                    </select>
-                                </div>
-                                <br/>
-            <label style={{fontSize:"1.2rem",margin:"10px"}}> Third Member:<br/></label>
-<br/>
+                                        </div>)}
+                                    {(radioSelection === 'with a girl' && formData.teamMem == '4') && (
+                                        <div>
+                                            <br />
+                                            <label style={{ fontSize: "1.2rem", margin: "10px" }}> First Member:<br /></label>
+                                            <br />
+                                            <label htmlFor="fullname">Name</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="name_team1"
+                                                id="name_team1"
+                                                value={formData.name_team1}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <label htmlFor="phone">Phone</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="phone_team1"
+                                                id="phone_team1"
+                                                value={formData.phone_team1}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <div className={styles.inpDiv}>
+                                                <label htmlFor="branch">Branch</label>
+                                                <select
+                                                    className={styles.inputBox}
+                                                    name="branch_team1"
+                                                    id="branch_team1"
+                                                    value={formData.branch_team1}
+                                                    onChange={handleInputChange}
+                                                    required
+                                                >
+                                                    <option value="">Select Branch</option>
+                                                    <option value="CSE">CSE</option>
+                                                    <option value="IT">IT</option>
+                                                    <option value="ET">ET</option>
+                                                    <option value="EE">EE</option>
+                                                    <option value="ME">ME</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="CHE">CHE</option>
+                                                    <option value="PT">PT</option>
+                                                    <option value="PL">PL</option>
+                                                    <option value="FT">FT</option>
+                                                    <option value="OT">OT</option>
+                                                    <option value="BE">BE</option>
+                                                    <option value="LT">LT</option>
+                                                    <option value="BBA">BBA</option>
+                                                    <option value="BCA">BCA</option>
+                                                    <option value="MBA">MBA</option>
+                                                    <option value="MCA">MCA</option>
+                                                    <option value="M.tech">M.tech</option>
+                                                    <option value="M.sc">M.sc</option>
+                                                    <option value="PhD">PhD</option>
+                                                    <option value="BSMS">BSMS</option>
+                                                    <option value="OTHER">Other</option>
+                                                </select>
+                                            </div>
+                                            <br />
+                                            <label style={{ fontSize: "1.2rem", margin: "10px" }}> Second Member:<br /></label>
+                                            <br />
+                                            <label htmlFor="fullname">Name</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="name_team2"
+                                                id="name_team2"
+                                                value={formData.name_team2}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <label htmlFor="phone">Phone</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="phone_team2"
+                                                id="phone_team2"
+                                                value={formData.phone_team2}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <div className={styles.inpDiv}>
+                                                <label htmlFor="branch">Branch</label>
+                                                <select
+                                                    className={styles.inputBox}
+                                                    name="branch_team2"
+                                                    id="branch_team2"
+                                                    value={formData.branch_team2}
+                                                    onChange={handleInputChange}
+                                                    required
+                                                >
+                                                    <option value="">Select Branch</option>
+                                                    <option value="CSE">CSE</option>
+                                                    <option value="IT">IT</option>
+                                                    <option value="ET">ET</option>
+                                                    <option value="EE">EE</option>
+                                                    <option value="ME">ME</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="CHE">CHE</option>
+                                                    <option value="PT">PT</option>
+                                                    <option value="PL">PL</option>
+                                                    <option value="FT">FT</option>
+                                                    <option value="OT">OT</option>
+                                                    <option value="BE">BE</option>
+                                                    <option value="LT">LT</option>
+                                                    <option value="BBA">BBA</option>
+                                                    <option value="BCA">BCA</option>
+                                                    <option value="MBA">MBA</option>
+                                                    <option value="MCA">MCA</option>
+                                                    <option value="M.tech">M.tech</option>
+                                                    <option value="M.sc">M.sc</option>
+                                                    <option value="PhD">PhD</option>
+                                                    <option value="BSMS">BSMS</option>
+                                                    <option value="OTHER">Other</option>
+                                                </select>
+                                            </div>
+                                            <br />
+                                            <label style={{ fontSize: "1.2rem", margin: "10px" }}> Third Member:<br /></label>
+                                            <br />
 
-                                <label htmlFor="fullname">Name</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="name_team3"
-                                        id="name_team3"
-                                        value={formData.name_team3}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-                                <label htmlFor="phone">Phone</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="phone_team3"
-                                        id="phone_team3"
-                                        value={formData.phone_team3}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-       <div className={styles.inpDiv}>
-                                    <label htmlFor="branch">Branch</label>
-                                    <select
-                                        className={styles.inputBox}
-                                        name="branch_team3"
-                                        id="branch_team3"
-                                        value={formData.branch_team3}
-                                        onChange={handleInputChange}
-                                        required
-                                    >
-                                        <option value="">Select Branch</option>
-                                        <option value="CSE">CSE</option>
-                                        <option value="IT">IT</option>
-                                        <option value="ET">ET</option>
-                                        <option value="EE">EE</option>
-                                        <option value="ME">ME</option>
-                                        <option value="CE">CE</option>
-                                        <option value="CHE">CHE</option>
-                                        <option value="PT">PT</option>
-                                        <option value="PL">PL</option>
-                                        <option value="FT">FT</option>
-                                        <option value="OT">OT</option>
-                                        <option value="BE">BE</option>
-                                        <option value="LT">LT</option>
-                                        <option value="BBA">BBA</option>
-                                        <option value="BCA">BCA</option>
-                                        <option value="MBA">MBA</option>
-                                        <option value="MCA">MCA</option>
-                                        <option value="M.tech">M.tech</option>
-                                        <option value="M.sc">M.sc</option>
-                                        <option value="PhD">PhD</option>
-                                        <option value="BSMS">BSMS</option>
-                                        <option value="OTHER">Other</option>
-                                    </select>
-                                </div>
-                                <br/>
-            <label style={{fontSize:"1.2rem",margin:"10px"}}> Fourth Member:<br/></label>
-<br/>
-                                <label htmlFor="fullname">Name</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="name_team4"
-                                        id="name_team4"
-                                        value={formData.name_team4}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-                                <label htmlFor="phone">Phone</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="phone_team4"
-                                        id="phone_team4"
-                                        value={formData.phone_team4}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-       <div className={styles.inpDiv}>
-                                    <label htmlFor="branch">Branch</label>
-                                    <select
-                                        className={styles.inputBox}
-                                        name="branch_team4"
-                                        id="branch_team4"
-                                        value={formData.branch_team4}
-                                        onChange={handleInputChange}
-                                        required
-                                    >
-                                        <option value="">Select Branch</option>
-                                        <option value="CSE">CSE</option>
-                                        <option value="IT">IT</option>
-                                        <option value="ET">ET</option>
-                                        <option value="EE">EE</option>
-                                        <option value="ME">ME</option>
-                                        <option value="CE">CE</option>
-                                        <option value="CHE">CHE</option>
-                                        <option value="PT">PT</option>
-                                        <option value="PL">PL</option>
-                                        <option value="FT">FT</option>
-                                        <option value="OT">OT</option>
-                                        <option value="BE">BE</option>
-                                        <option value="LT">LT</option>
-                                        <option value="BBA">BBA</option>
-                                        <option value="BCA">BCA</option>
-                                        <option value="MBA">MBA</option>
-                                        <option value="MCA">MCA</option>
-                                        <option value="M.tech">M.tech</option>
-                                        <option value="M.sc">M.sc</option>
-                                        <option value="PhD">PhD</option>
-                                        <option value="BSMS">BSMS</option>
-                                        <option value="OTHER">Other</option>
-                                    </select>
-                                </div>
-<br></br>
-                                
-                                <label htmlFor="fullname">Team Name</label>
-                                    <input
-                                        className={styles.inputBox}
-                                        type="text"
-                                        name="team_name"
-                                        id="team_name"
-                                        value={formData.team_name}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-        </div>)}
+                                            <label htmlFor="fullname">Name</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="name_team3"
+                                                id="name_team3"
+                                                value={formData.name_team3}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <label htmlFor="phone">Phone</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="phone_team3"
+                                                id="phone_team3"
+                                                value={formData.phone_team3}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <div className={styles.inpDiv}>
+                                                <label htmlFor="branch">Branch</label>
+                                                <select
+                                                    className={styles.inputBox}
+                                                    name="branch_team3"
+                                                    id="branch_team3"
+                                                    value={formData.branch_team3}
+                                                    onChange={handleInputChange}
+                                                    required
+                                                >
+                                                    <option value="">Select Branch</option>
+                                                    <option value="CSE">CSE</option>
+                                                    <option value="IT">IT</option>
+                                                    <option value="ET">ET</option>
+                                                    <option value="EE">EE</option>
+                                                    <option value="ME">ME</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="CHE">CHE</option>
+                                                    <option value="PT">PT</option>
+                                                    <option value="PL">PL</option>
+                                                    <option value="FT">FT</option>
+                                                    <option value="OT">OT</option>
+                                                    <option value="BE">BE</option>
+                                                    <option value="LT">LT</option>
+                                                    <option value="BBA">BBA</option>
+                                                    <option value="BCA">BCA</option>
+                                                    <option value="MBA">MBA</option>
+                                                    <option value="MCA">MCA</option>
+                                                    <option value="M.tech">M.tech</option>
+                                                    <option value="M.sc">M.sc</option>
+                                                    <option value="PhD">PhD</option>
+                                                    <option value="BSMS">BSMS</option>
+                                                    <option value="OTHER">Other</option>
+                                                </select>
+                                            </div>
+                                            <br />
+                                            <label style={{ fontSize: "1.2rem", margin: "10px" }}> Fourth Member:<br /></label>
+                                            <br />
+                                            <label htmlFor="fullname">Name</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="name_team4"
+                                                id="name_team4"
+                                                value={formData.name_team4}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <label htmlFor="phone">Phone</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="phone_team4"
+                                                id="phone_team4"
+                                                value={formData.phone_team4}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                            <div className={styles.inpDiv}>
+                                                <label htmlFor="branch">Branch</label>
+                                                <select
+                                                    className={styles.inputBox}
+                                                    name="branch_team4"
+                                                    id="branch_team4"
+                                                    value={formData.branch_team4}
+                                                    onChange={handleInputChange}
+                                                    required
+                                                >
+                                                    <option value="">Select Branch</option>
+                                                    <option value="CSE">CSE</option>
+                                                    <option value="IT">IT</option>
+                                                    <option value="ET">ET</option>
+                                                    <option value="EE">EE</option>
+                                                    <option value="ME">ME</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="CHE">CHE</option>
+                                                    <option value="PT">PT</option>
+                                                    <option value="PL">PL</option>
+                                                    <option value="FT">FT</option>
+                                                    <option value="OT">OT</option>
+                                                    <option value="BE">BE</option>
+                                                    <option value="LT">LT</option>
+                                                    <option value="BBA">BBA</option>
+                                                    <option value="BCA">BCA</option>
+                                                    <option value="MBA">MBA</option>
+                                                    <option value="MCA">MCA</option>
+                                                    <option value="M.tech">M.tech</option>
+                                                    <option value="M.sc">M.sc</option>
+                                                    <option value="PhD">PhD</option>
+                                                    <option value="BSMS">BSMS</option>
+                                                    <option value="OTHER">Other</option>
+                                                </select>
+                                            </div>
+                                            <br></br>
+
+                                            <label htmlFor="fullname">Team Name</label>
+                                            <input
+                                                className={styles.inputBox}
+                                                type="text"
+                                                name="team_name"
+                                                id="team_name"
+                                                value={formData.team_name}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
+                                        </div>)}
 
 
                                 </div>
@@ -1050,11 +1052,11 @@ const FormTab = ({ updatedEventName }) => {
                                     <button type='submit' className={styles.myButton}>
                                         Next
                                     </button>
-                                             {(radioSelection === 'without a girl') && (document.querySelector("button")) && (document.querySelector("button").disabled=true )}
-        {(radioSelection === 'with a girl') && (document.querySelector("button")) && (document.querySelector("button").disabled=false )}
+                                    {(radioSelection === 'without a girl') && (document.querySelector("button")) && (document.querySelector("button").disabled = true)}
+                                    {(radioSelection === 'with a girl') && (document.querySelector("button")) && (document.querySelector("button").disabled = false)}
                                 </div>
                             </div>
-                                            
+
                         </form>
 
 
@@ -1094,7 +1096,7 @@ const FormTab = ({ updatedEventName }) => {
                                         />
                                     </div>
                                 </>}
-                                {(formData.college !== 'HBTU Kanpur' &&window.location.href.substring(window.location.href.lastIndexOf("/")+1)!="techathon" && !freeforall) ? <>
+                                {(formData.college !== 'HBTU Kanpur' && window.location.href.substring(window.location.href.lastIndexOf("/") + 1) != "techathon" && !freeforall) ? <>
                                     <div className={styles.inpDiv}>
                                         <div className={styles.qrdiv} onClick={handleOpenDialog}>
                                             <div>Click to view QR</div>
