@@ -141,7 +141,7 @@ const EventImg = [
     "Water Rocket": "/events/test.webp"
   },
   {
-    "Robo Race": "/events/race.webp"
+    "RC Race": "/events/race.webp"
   },
   {
     "Junkyard": "/events/junk.webp"
