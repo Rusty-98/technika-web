@@ -176,4 +176,7 @@ const EventImg = [
   {
     "Run Time Error": "/events/runtime.webp"
   },
+  {
+    "Mock CID": "/events/mock.webp"
+  }
 ]
