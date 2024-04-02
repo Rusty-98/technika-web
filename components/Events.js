@@ -178,5 +178,38 @@ const EventImg = [
   },
   {
     "Mock CID": "/events/mock.webp"
-  }
+  },
+  {
+    "Shark Tank": "/events/shark.webp"
+  },
+  {
+    "Air-o-Speak": "/events/air.webp"
+  },
+  {
+    "Among Us": "/events/among.webp"
+  },
+  {
+    "Bridge-o-Mania": "/events/bridge.webp"
+  },
+  {
+    "Morse's Laser": "/events/morse.webp"
+  },
+  {
+    "Tech Expo": "/events/expo.webp"
+  },
+  {
+    "Kya Engineer Bnega Re Tu": "/events/kya.webp"
+  },
+  {
+    "Hovermania": "/events/hover.webp"
+  },
+  {
+    "Laser-o-Reflect": "/events/laser.webp"
+  },
+  {
+    "Save The Egg": "/events/save.webp"
+  },
+  {
+    "Pitching": "/events/pitching.webp"
+  },
 ]
