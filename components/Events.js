@@ -212,4 +212,19 @@ const EventImg = [
   {
     "Pitching": "/events/pitching.webp"
   },
+  {
+    "Shark Tank": "/events/shark.webp"
+  },
+  {
+    "Break The Code": "/events/break.webp"
+  },
+  {
+    "Udaan": "/events/udaan.webp"
+  },
+  {
+    "Maze Solver": "/events/maze.webp"
+  },
+  {
+    "Blazing wheel": "/events/wheel.webp"
+  },
 ]
