@@ -109,6 +109,7 @@ const Events = ({ isHome }) => {
                 key={event._id}
                 text={event.name}
                 prize={"2000"}
+                img={EventImg.find(img => img[event.name]) ? EventImg.find(img => img[event.name])[event.name] : ""}
               />
             </div>
           ))}
@@ -125,3 +126,111 @@ const Events = ({ isHome }) => {
 };
 
 export default Events;
+
+const EventImg = [
+  {
+    "Robot Soccer": "/events/roboSoccer.webp"
+  },
+  {
+    "Water Rocket": "/events/water.webp"
+  },
+  {
+    "Aircraft Simulation": "/events/airSim.webp"
+  },
+  {
+    "Water Rocket": "/events/test.webp"
+  },
+  {
+    "RC Race": "/events/race.webp"
+  },
+  {
+    "Junkyard": "/events/junk.webp"
+  },
+  {
+    "Hackathon": "/events/hackathon.webp"
+  },
+  {
+    "Junkyard": "/events/junk.webp"
+  },
+  {
+    "Robo Wrestling": "/events/test.jpg"
+  },
+  {
+    "Escape Room": "/events/escape.webp"
+  },
+  {
+    "Robo Wrestling": "/events/test.webp"
+  },
+  {
+    "Quiz Me More": "/events/quiz.webp"
+  },
+  {
+    "Programing date": "/events/progDate.webp"
+  },
+  {
+    "Flip-o-Friend": "/events/flip.webp"
+  },
+  {
+    "Blind Date": "/events/bd.webp"
+  },
+  {
+    "Run Time Error": "/events/runtime.webp"
+  },
+  {
+    "Mock CID": "/events/mock.webp"
+  },
+  {
+    "Shark Tank": "/events/shark.webp"
+  },
+  {
+    "Air-o-Speak": "/events/air.webp"
+  },
+  {
+    "Among Us": "/events/among.webp"
+  },
+  {
+    "Bridge-o-Mania": "/events/bridge.webp"
+  },
+  {
+    "Morse's Laser": "/events/morse.webp"
+  },
+  {
+    "Tech Expo": "/events/expo.webp"
+  },
+  {
+    "Kya Engineer Bnega Re Tu": "/events/kya.webp"
+  },
+  {
+    "Hovermania": "/events/hover.webp"
+  },
+  {
+    "Laser-o-Reflect": "/events/laser.webp"
+  },
+  {
+    "Save The Egg": "/events/save.webp"
+  },
+  {
+    "Pitching": "/events/pitching.webp"
+  },
+  {
+    "Shark Tank": "/events/shark.webp"
+  },
+  {
+    "Break The Code": "/events/break.webp"
+  },
+  {
+    "Udaan": "/events/udaan.webp"
+  },
+  {
+    "Maze Solver": "/events/maze.webp"
+  },
+  {
+    "Blazing wheel": "/events/wheel.webp"
+  },
+  {
+    "Wrong Innovation": "/events/wrong.webp"
+  },
+  {
+    "Finance Quiz": "/events/finance.webp"
+  },
+]

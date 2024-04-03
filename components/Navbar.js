@@ -44,11 +44,11 @@ const Navbar = ({ onNavbarLinkClick }) => {
         </div>
       </div>
 
-      <div style={{ padding: "5px", paddingRight: "10px" }}>
+      {/* <div style={{ padding: "5px", paddingRight: "10px" }}>
         <div onClick={() => { onNavbarLinkClick(); router.push('/merchandise'); }} style={{ outline: "none !important", textDecoration: "none", color: "white", cursor:'pointer' }}>
           <Image src='/images/homepage_icons/merchandise.PNG' width={801/3} height={311/3} alt='' style={{height:'40px', width:'auto'}}></Image>
         </div>
-      </div>
+      </div> */}
 
       <div style={{ padding: "5px", paddingRight: "10px" }}>
         <div onClick={() => { onNavbarLinkClick(); router.push('/admin/dashboard'); }} style={{ outline: "none !important", textDecoration: "none", color: "white", cursor:'pointer' }}>

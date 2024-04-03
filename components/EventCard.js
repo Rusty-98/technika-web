@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styles from './compstyles/eventcard.module.css'
-const EventCard = ({ text, prize }) => {
+const EventCard = ({ text, prize, img }) => {
   return (
     <div className={styles.fullCard} >
       <div className={styles.cardBorderDiv} >
@@ -8,6 +8,7 @@ const EventCard = ({ text, prize }) => {
         <div className={styles.black}>
 
           <div className={styles.cardDiv}>
+            <img src={img} alt="" className={styles.bg} />
             <div className={styles.border}>
               <p className={styles.mainText}>{text}</p>
             </div>
