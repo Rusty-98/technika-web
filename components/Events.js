@@ -227,4 +227,10 @@ const EventImg = [
   {
     "Blazing wheel": "/events/wheel.webp"
   },
+  {
+    "Wrong Innovation": "/events/wrong.webp"
+  },
+  {
+    "Finance Quiz": "/events/finance.webp"
+  },
 ]
