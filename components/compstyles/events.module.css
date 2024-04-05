@@ -192,7 +192,7 @@
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
 }
 
-.more{
+.more {
     text-decoration: none;
     text-transform: capitalize;
 }
@@ -232,8 +232,16 @@
         font-size: 5rem;
     }
 
+    .heading2 {
+        font-size: 5rem;
+    }
+
     .tabChild {
         font-size: 1rem;
+    }
+
+    .pdfContainer{
+        width: 70vw;
     }
 
 
@@ -241,6 +249,10 @@
 
 @media screen and (max-width:600px) {
     .heading {
+        font-size: 3rem;
+    }
+
+    .heading2 {
         font-size: 3rem;
     }
 
@@ -257,20 +269,24 @@
         display: none;
     }
 
-    .list{
+    .list {
         display: flex;
     }
 
-    .listItem{
+    .listItem {
         font-size: 1.2rem;
     }
-    
+
     .tabChild {
         display: none;
     }
 
     .select {
         display: none;
+    }
+
+    .pdfContainer{
+        width: 80vw;
     }
 
 }
