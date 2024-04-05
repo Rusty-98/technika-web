@@ -49,6 +49,58 @@
     background-clip: text;
 }
 
+.heading2 {
+    position: relative;
+    text-align: center;
+    font-family: Krona One;
+    font-size: 6.25rem;
+    font-style: normal;
+    font-weight: 400;
+    display: inline-block;
+    color: transparent;
+    letter-spacing: 5px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+}
+
+.heading2::before {
+    content: "Rules";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: black;
+    /* font-size: 6.25rem; */
+    font-style: normal;
+    -webkit-text-stroke: 6px rgba(255, 255, 255, 0);
+    /* Standard syntax */
+    -webkit-text-fill-color: black;
+    color: black;
+    background: linear-gradient(to right, rgba(73, 73, 73, 1), rgba(255, 255, 255, 1));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.rule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pdfContainer {
+    background: linear-gradient(to bottom, #FF00D6BD, #0066FF5E);
+    padding: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 40vw;
+}
+
+.pdf {
+    border-radius: 10px;
+}
+
 .tabContainer {
     width: 95vw;
     height: 70px;

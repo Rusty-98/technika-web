@@ -120,6 +120,14 @@ const Events = ({ isHome }) => {
             />
           </Link>}
         </div>
+        {
+          !isHome && <div className={style.rule}>
+            <p className={style.heading2}>Rules</p>
+            <div className={style.pdfContainer}>
+              <embed src="https://drive.google.com/file/d/193-3rBbWkmV5LViZndWxqwq1sbucTqrb/preview" toolbar="0" width="100%" height="500px" allow="autoplay" style={{ maxWidth: '900px' }} className={style.pdf}></embed>
+            </div>
+          </div>
+        }
       </div>
     </div>
   );
